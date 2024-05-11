@@ -1,0 +1,39 @@
+.toggle {
+  background-color: grey;
+  width: 60px;
+  height: 32px;
+  border-radius: 16px;
+  display: flex;
+  flex-direction: column;
+  margin-top: 4px;
+}
+
+.toggle-active {
+  background-color: blue;
+  width: 60px;
+  height: 32px;
+  border-radius: 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.toggle-input {
+  display: none;
+}
+
+.slider {
+  height: 24px;
+  width: 24px;
+  background-color: white;
+  border-radius: 12px;
+  margin: 4px;
+}
+
+input:checked + .toggle {
+   background-color: green;
+}
+
+input:checked + .toggle > .slider {
+  align-self: flex-end;
+}

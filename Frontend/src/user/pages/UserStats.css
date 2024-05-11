@@ -1,0 +1,65 @@
+.mystats-container {
+  padding: 10px;
+}
+
+.mystats-image-background1 {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  height: 500px;
+  padding-bottom: 50px;
+  margin-bottom: 10px;
+  border-radius: 10px;
+  background-image: url("../../images/pileated-banner.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 60%;
+}
+
+.mystats-image-background2 {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  height: 500px;
+  padding-bottom: 50px;
+  margin-bottom: 10px;
+  border-radius: 10px;
+  background-image: url("../../images/nuthatch-banner.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 40%;
+}
+
+/* .mystats-count-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+} */
+
+.mystats-total-count {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: white;
+  margin: 0 5px;
+  padding: 20px;
+  width: 300px;
+  opacity: 70%;
+}
+
+.mystats-year-count {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: white;
+  justify-content: space-around;
+  margin: 0 5px;
+  padding: 20px;
+  width: 300px;
+  opacity: 70%;
+}
+
+.mystats-total-count-h2 {
+  margin: 5px;
+  text-align: center;
+}

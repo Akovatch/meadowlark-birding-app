@@ -1,0 +1,45 @@
+html, body {
+  height: 100vh;
+  width: 100vw;
+  min-width: 370px;
+}
+
+main {
+  height: auto;
+  width: 100%;
+  margin: 10px 0;
+}
+
+div#root {
+  height: 100%;
+  width: 100%;
+}
+
+.input-height {
+  height: 38px;
+}
+
+.react-datepicker__input-container {
+  height: 38px;
+}
+
+.react-datepicker__input-container input {
+  height: 38px;
+}
+
+.stats-dates-container input {
+  height: 20px;
+}
+
+.stats-dates-container .react-datepicker__input-container{
+  height: 20px;
+}
+
+a {
+  color: black;
+  text-decoration: inherit;
+}
+
+a:hover {
+  color: blue;
+}

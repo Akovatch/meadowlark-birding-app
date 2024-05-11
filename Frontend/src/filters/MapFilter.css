@@ -1,0 +1,128 @@
+.mapfilter-container {
+  padding: 10px;
+}
+
+.filter-row {
+  display: flex;
+  flex-direction: row;
+}
+
+.filter-field-group {
+  flex: 1;
+  display: flex;
+  margin: 10px;
+  flex-direction: column;
+}
+
+.filter-label {
+  width: 80px;
+  text-align: left;
+  margin: 0 0 10px 0;
+}
+
+.filter-controls {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  flex: 1;
+}
+
+.filter-input {
+ flex: 1;
+}
+
+.filter-reset {
+  margin-left: 10px;
+  height: 25px;
+  width: 25px;
+}
+
+.filter-months-input {
+  display: flex;
+  flex: 1;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+/* .filter-months-grid-container {
+  display: flex;
+  flex-grow: 1;
+  min-width: 180px;
+  max-width: 400px;
+} */
+/*
+
+.filter-months-horizontal-container {
+  display: flex;
+  flex-grow: 1;
+  min-width: 180px;
+  max-width: 400px;
+} */
+
+.filter-month-column {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  max-width: 38px;
+  min-width: 35px;
+  flex: 1;
+}
+
+.filter-clear-all-field-group {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-end;
+  width: 150px;
+}
+
+.filter-clear-all {
+  border: 1px solid gray;
+  font: inherit;
+  border-radius: 10px;
+  margin: 30px 0;
+  padding: 15px;
+
+}
+
+.clear-filters-button-active {
+  background-color: lightsalmon;
+  border: 1px solid black;
+}
+
+.filter-close-button-row {
+  display: flex;
+  justify-content: center;
+  padding: 5px 0;
+  background-color: gray;
+  border-radius: 5px;
+  border-top: 1px solid black;
+}
+
+
+
+/* FOR WHEN IT GROWS TO FULL BROWSER */
+@media (min-width: 768px) {
+  .filter-row {
+    display: flex;
+    flex-direction: column;
+  }
+
+.filter-controls {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  flex: 1;
+}
+
+.filter-clear-all-field-group {
+  display: flex;
+  align-self: center;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-end;
+  width: 150px;
+  flex: 1;
+}
+
+}

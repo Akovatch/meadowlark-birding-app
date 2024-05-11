@@ -1,0 +1,26 @@
+.footer-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100px;
+  background: lightgrey;
+  border: 1px solid black;
+  border-radius: 10px;
+  margin: 10px 10px 20px;
+}
+
+.footer-break {
+  height: 2rem;
+  background-color: #29006E;
+}
+
+/* ERASE ME IF NOT USED... */
+.footer-banner {
+  display: none;
+  height: 300px;
+  border: 1px solid black;
+  background-image: url("../src/images/heron-banner2.jpg");
+  background-repeat: no-repeat;
+  background-position: 60%;
+  background-size: cover;
+}

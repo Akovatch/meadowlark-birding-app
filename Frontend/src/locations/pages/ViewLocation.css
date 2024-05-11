@@ -1,0 +1,45 @@
+.viewlocation-container {
+  background-color: white;
+  padding: 10px;
+  border-radius: 10px;
+  margin: 10px 10px 0 10px;
+}
+
+.viewlocation-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+
+.viewlocation-header-return-container {
+  width: 173px;
+}
+
+
+.viewlocation-header-title {
+  text-align: center;
+
+}
+
+.viewlocation-header-controls {
+  display: flex;
+  justify-content: flex-end;
+  width: 173px;
+}
+
+.viewlocation-map-container {
+  display: flex;
+  padding: 10px;
+}
+
+.viewlocation-map {
+  flex: 1;
+}
+
+.viewlocation-creator {
+  color: gray;
+  text-align: center;
+}
+
+
