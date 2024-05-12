@@ -41,12 +41,19 @@
 }
 
 .banner {
-  height: 350px;
-  border: 1px solid black;
-  background-image: url("../../../images/heron-banner5.jpg");
-  background-repeat: no-repeat;
-  background-position: 60%;
-  background-size:cover;
+  display: none;
+}
+
+@media (min-width: 750px) {
+  .banner {
+    display: block;
+    height: 350px;
+    border: 1px solid black;
+    background-image: url("../../../images/heron-banner5.jpg");
+    background-repeat: no-repeat;
+    background-position: 60%;
+    background-size:cover;
+  }
 }
 
 @media (min-width: 980px) {

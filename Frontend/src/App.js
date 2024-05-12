@@ -15,7 +15,7 @@ import MainNavigation from "./shared/components/Navigation/MainNavigation";
 import ViewLocation from "./locations/pages/ViewLocation";
 import Auth from "./user/pages/Auth";
 import FilterPanel from "./shared/components/UIElements/FilterPanel";
-import Footer from "./Footer";
+import Footer from "./shared/components/Navigation/Footer";
 import { AuthContext } from "./shared/context/auth-context";
 import { useAuth } from "./shared/hooks/auth-hook";
 
@@ -38,6 +38,8 @@ function App() {
   } = useFilters();
 
   let routes;
+
+  console.log(token);
 
   if (token) {
     routes = (

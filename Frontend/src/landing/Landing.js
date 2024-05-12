@@ -5,7 +5,7 @@ export default function Landing() {
   return (
     <div className="background">
       <div className="translucent-box">
-        <h2>Beautiful landing page with an image background.</h2>
+        <h2>Welcome message in opaque box explaining the site</h2>
       </div>
     </div>
   );

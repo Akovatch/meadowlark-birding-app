@@ -6,19 +6,22 @@ export function useAuth() {
   // originally "null"
   // at one point I changed it to localStorage.getItem("userData") but it resulted in the program treating 'null' as a valid token because
   // I forgot to add JSON.parse()
-  const [token, setToken] = useState(
-    JSON.parse(localStorage.getItem("userData"))
-  );
+
+  let browserStorage = JSON.parse(localStorage.getItem("userData"));
+
+  const [token, setToken] = useState(browserStorage && browserStorage.token);
   const [tokenExpirationDate, setTokenExpirationDate] = useState();
   const [userId, setUserId] = useState(null);
-
-  console.log(token);
 
   const login = useCallback((uid, token, expirationDate) => {
     setToken(token);
     setUserId(uid);
     const tokenExpiration =
       expirationDate || new Date(new Date().getTime() + 1000 * 60 * 60);
+
+    // For testing purposes - logs out after 10 seconds
+    // const tokenExpiration =
+    //   expirationDate || new Date(new Date().getTime() + 10000);
 
     setTokenExpirationDate(tokenExpiration);
 
@@ -38,6 +41,9 @@ export function useAuth() {
     setUserId(null);
     localStorage.removeItem("userData");
   }, []);
+
+  console.log(token);
+  console.log(tokenExpirationDate);
 
   useEffect(() => {
     if (token && tokenExpirationDate) {

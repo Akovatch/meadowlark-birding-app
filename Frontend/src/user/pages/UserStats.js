@@ -67,7 +67,7 @@ export default function UserStats() {
         <div className="mystats-container">
           <div className="mystats-image-background1">
             <div className="mystats-total-count">
-              <h2 className="mystats-total-count-h2">Total Species</h2>
+              <h2 className="mystats-total-count-h2">Total Species Count</h2>
               <h2 className="mystats-total-count-h2">
                 {
                   <CountUp
