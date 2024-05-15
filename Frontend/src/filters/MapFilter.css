@@ -44,21 +44,6 @@
   justify-content: space-between;
 }
 
-/* .filter-months-grid-container {
-  display: flex;
-  flex-grow: 1;
-  min-width: 180px;
-  max-width: 400px;
-} */
-/*
-
-.filter-months-horizontal-container {
-  display: flex;
-  flex-grow: 1;
-  min-width: 180px;
-  max-width: 400px;
-} */
-
 .filter-month-column {
   display: flex;
   flex-direction: column;
@@ -99,30 +84,26 @@
   border-top: 1px solid black;
 }
 
-
-
-/* FOR WHEN IT GROWS TO FULL BROWSER */
 @media (min-width: 768px) {
   .filter-row {
     display: flex;
     flex-direction: column;
   }
 
-.filter-controls {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  flex: 1;
-}
+  .filter-controls {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    flex: 1;
+  }
 
-.filter-clear-all-field-group {
-  display: flex;
-  align-self: center;
-  flex-direction: row;
-  justify-content: center;
-  align-items: flex-end;
-  width: 150px;
-  flex: 1;
-}
-
+  .filter-clear-all-field-group {
+    display: flex;
+    align-self: center;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-end;
+    width: 150px;
+    flex: 1;
+  }
 }

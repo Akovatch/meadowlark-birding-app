@@ -1,15 +1,14 @@
 import React, { useContext } from "react";
-
 import Select from "react-select";
+import { FcCollapse } from "react-icons/fc";
+
 import Checkbox from "../shared/components/FormElements/Checkbox";
 import speciesOptions from "../data";
 import { FilterContext } from "../shared/context/filter-context";
-import { FcCollapse } from "react-icons/fc";
 
 import "./MapFilter.css";
 import "react-datepicker/dist/react-datepicker.css";
 
-// locationId(passed in), species, date, note
 export default function MapFilter(props) {
   let checkboxOptions = [
     { value: "Jan", checked: false },
@@ -34,16 +33,6 @@ export default function MapFilter(props) {
     setYearFilter,
     setMonthsFilter,
   } = useContext(FilterContext);
-
-  // userEffect(() => {
-  //   let filters = {
-  //     speciesFilter,
-  //     year,
-  //     months,
-  //   };
-
-  //   props.onFilterChange(filters);
-  // }, [species, year, months] );
 
   function checkboxChangeHandler(currVal, boxName) {
     let updatedMonths = monthsFilter.slice();
@@ -149,12 +138,6 @@ export default function MapFilter(props) {
                   value: speciesFilter,
                 }}
               />
-              {/* <button
-              className="filter-reset"
-              onClick={() => resetHandler("species")}
-            >
-              X
-            </button> */}
             </div>
           </div>
           <div className="filter-field-group">
@@ -169,12 +152,6 @@ export default function MapFilter(props) {
                   value: yearFilter,
                 }}
               />
-              {/* <button
-              className="filter-reset"
-              onClick={() => resetHandler("year")}
-            >
-              X
-            </button> */}
             </div>
           </div>
         </div>
@@ -183,16 +160,8 @@ export default function MapFilter(props) {
             <h3 className="filter-label">Months</h3>
             <div className="filter-controls">
               <div className="filter-months-input">
-                {/* {generateMonthCheckboxes("grid")} */}
                 {generateMonthCheckboxes("grid")}
-                {/* {generateMonthCheckboxes("line")} */}
               </div>
-              {/* <button
-              className="filter-reset"
-              onClick={() => resetHandler("months")}
-            >
-              X
-            </button> */}
             </div>
           </div>
           <div className="filter-clear-all-field-group">

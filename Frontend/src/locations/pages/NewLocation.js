@@ -1,5 +1,6 @@
 import React, { useContext } from "react";
 import { useHistory } from "react-router-dom";
+import { toast } from "react-toastify";
 
 import Input from "../../shared/components/FormElements/Input";
 import Button from "../../shared/components/FormElements/Button";
@@ -10,7 +11,6 @@ import { VALIDATOR_REQUIRE } from "../../shared/util/validators";
 import { useForm } from "../../shared/hooks/form-hook";
 import { useHttpClient } from "../../shared/hooks/http-hook";
 import { AuthContext } from "../../shared/context/auth-context";
-import { toast } from "react-toastify";
 
 import "./NewLocation.css";
 
@@ -27,7 +27,6 @@ export default function NewLocation() {
         isValid: true,
       },
       sightings: {
-        // empty array sent on purpose
         value: [],
         isValid: true,
       },
@@ -57,8 +56,6 @@ export default function NewLocation() {
       );
       toast.success("New Location added!");
       history.push(`/locations/${responseData.location.id}`);
-      // history.push(`/${auth.userId}/locations`); // THIS WILL BE EDITED LATER TO REDIRECT US TO THE VIEW LOCATION PAGE - WHICH DOESN'T YET EXIST
-      // Eventually: history.push(`locations/${responseData.id}`)
     } catch (err) {}
   }
 

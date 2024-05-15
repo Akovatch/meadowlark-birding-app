@@ -1,12 +1,10 @@
 import React, { useContext } from "react";
 
 import { FilterContext } from "../shared/context/filter-context";
-import { MdOutlineAddCircleOutline } from "react-icons/md";
 
 import "./FiltersNotification.css";
 
-// locationId(passed in), species, date, note
-export default function FiltersNotification(props) {
+export default function FiltersNotification() {
   const { speciesFilter, yearFilter, monthsFilter } = useContext(FilterContext);
 
   function getMonthStrings() {

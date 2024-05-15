@@ -1,4 +1,6 @@
 import React, { useState, useContext, useCallback } from "react";
+import DataTable from "react-data-table-component";
+import { toast } from "react-toastify";
 import { BiEditAlt } from "react-icons/bi";
 import { RiDeleteBinLine } from "react-icons/ri";
 
@@ -9,9 +11,7 @@ import Modal from "../../shared/components/UIElements/Modal";
 import LoadingSpinner from "../../shared/components/UIElements/LoadingSpinner";
 import { AuthContext } from "../../shared/context/auth-context";
 import { useHttpClient } from "../../shared/hooks/http-hook";
-import { toast } from "react-toastify";
 
-import DataTable from "react-data-table-component";
 import Card from "../../shared/components/UIElements/Card";
 import { Redirect } from "react-router-dom";
 import "./SightingsTable.css";
@@ -115,7 +115,7 @@ export default function SightingsTable(props) {
   ];
 
   function getAudubonLink(species) {
-    // Bicknell's Thrush => bicknells-thrush
+    // ex. Bicknell's Thrush => bicknells-thrush
     const path = species.toLowerCase().replace("'", "").split(" ").join("-");
     return (
       <a
@@ -141,11 +141,6 @@ export default function SightingsTable(props) {
     });
   }
 
-  // function updateTableData(id) {
-  //   allSightingsData = allSightingsData.filter();
-  // }
-
-  // simply sets the state var selectedSighting when a row is selected
   const handleRowSelected = useCallback(
     (state) => {
       if (state.selectedRows.length > 0) {
@@ -157,7 +152,7 @@ export default function SightingsTable(props) {
         setSelectedSighting(null);
       }
     },
-    [props.sightings] // adding this dependency fixes the problem
+    [props.sightings]
   );
 
   function resetTableSelection() {
@@ -210,8 +205,6 @@ export default function SightingsTable(props) {
         onCancel={closeEditModalHandler}
         header={"Edit Sighting"}
         contenClass="sighting-item__modal-content"
-        // footerClass="sighting-item__modal-actions"
-        // footer={<Button onClick={closeEditModalHandler}>CLOSE</Button>}
       >
         <div className="map-container">
           {selectedSighting && (
@@ -223,7 +216,7 @@ export default function SightingsTable(props) {
               species={selectedSighting.species}
               date={selectedSighting.date}
               note={selectedSighting.note}
-              updateSightings={props.updateSightings} // PROP DRILLING?
+              updateSightings={props.updateSightings}
               resetTableSelection={resetTableSelection}
             />
           )}

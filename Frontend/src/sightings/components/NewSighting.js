@@ -1,4 +1,7 @@
 import React, { useContext, useState } from "react";
+import { toast } from "react-toastify";
+import { MdOutlineAddCircleOutline } from "react-icons/md";
+import { FcCollapse } from "react-icons/fc";
 
 import Input from "../../shared/components/FormElements/Input";
 import Button from "../../shared/components/FormElements/Button";
@@ -12,13 +15,9 @@ import {
 import { useForm } from "../../shared/hooks/form-hook";
 import { useHttpClient } from "../../shared/hooks/http-hook";
 import { AuthContext } from "../../shared/context/auth-context";
-import { toast } from "react-toastify";
-import { MdOutlineAddCircleOutline } from "react-icons/md";
-import { FcCollapse } from "react-icons/fc";
 
 import "./NewSighting.css";
 
-// locationId(passed in), species, date, note
 export default function NewSighting(props) {
   const auth = useContext(AuthContext);
   const [formState, inputHandler, setFormData] = useForm(
@@ -32,7 +31,7 @@ export default function NewSighting(props) {
         isValid: true,
       },
       note: {
-        value: null, // SHOULD THIS BE EMPTY STRING?
+        value: null,
         isValid: true,
       },
     },
@@ -60,7 +59,7 @@ export default function NewSighting(props) {
           Authorization: "Bearer " + auth.token,
         }
       );
-      resetForm();
+      // resetForm();
       props.updateSightings((prevSightings) => [
         ...prevSightings,
         responseData.sighting,
@@ -69,25 +68,25 @@ export default function NewSighting(props) {
     } catch (err) {}
   }
 
-  function resetForm() {
-    setFormData(
-      {
-        species: {
-          value: "",
-          isValid: false,
-        },
-        date: {
-          value: "",
-          isValid: false,
-        },
-        note: {
-          value: "",
-          isValid: true,
-        },
-      },
-      false
-    );
-  }
+  // function resetForm() {
+  //   setFormData(
+  //     {
+  //       species: {
+  //         value: "",
+  //         isValid: false,
+  //       },
+  //       date: {
+  //         value: "",
+  //         isValid: false,
+  //       },
+  //       note: {
+  //         value: "",
+  //         isValid: true,
+  //       },
+  //     },
+  //     false
+  //   );
+  // }
 
   if (!props.panelOpen) {
     return (

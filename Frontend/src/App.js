@@ -5,6 +5,7 @@ import {
   Redirect,
   Switch,
 } from "react-router-dom";
+import { ToastContainer } from "react-toastify";
 
 import Landing from "./landing/Landing";
 import AllLocations from "./locations/pages/AllLocations";
@@ -18,11 +19,9 @@ import FilterPanel from "./shared/components/UIElements/FilterPanel";
 import Footer from "./shared/components/Navigation/Footer";
 import { AuthContext } from "./shared/context/auth-context";
 import { useAuth } from "./shared/hooks/auth-hook";
-
 import { FilterContext } from "./shared/context/filter-context";
 import { useFilters } from "./shared/hooks/filters-hook";
 
-import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import "./App.css";
 
@@ -43,7 +42,6 @@ function App() {
 
   if (token) {
     routes = (
-      // "Routes" (rather than Switch) is preferred in modern versions of react-router-dom
       <Switch>
         <Route path="/" exact>
           <Landing />
@@ -53,12 +51,12 @@ function App() {
             <AllLocations />
           </FilterPanel>
         </Route>
-        <Route path="/:userId/locations" exact>
+        <Route path="/:userId/locations">
           <FilterPanel>
             <UserLocations />
           </FilterPanel>
         </Route>
-        <Route path="/:userId/stats" exact>
+        <Route path="/:userId/stats">
           <UserStats />
         </Route>
         <Route path="/locations/new" exact>
@@ -83,11 +81,7 @@ function App() {
             <AllLocations />
           </FilterPanel>
         </Route>
-        {/* <Route path="/:userId/locations" exact>
-          <UserLocations />
-        </Route> */}
         <Route path="/locations/new" exact>
-          {/* This solves the problem of /new being mistaken for a :locationId, but seems like a hack */}
           <Redirect to="/auth" />
         </Route>
         <Route path="/locations/:locationId">
@@ -131,24 +125,3 @@ function App() {
 }
 
 export default App;
-
-// <div className="vertical-pane">
-//                 <SplitPane
-//                   split="vertical"
-//                   minSize={200}
-//                   paneStyle={{ height: "auto", overflowY: "scroll" }}
-//                 >
-//                   <MapFilter />
-//                   <div className="content-pane">{routes}</div>
-//                 </SplitPane>
-//               </div>
-//               <div className="horizontal-pane">
-//                 <SplitPane
-//                   split="horizontal"
-//                   minSize={200}
-//                   paneStyle={{ height: "auto", overflowY: "scroll" }}
-//                 >
-//                   <MapFilter />
-//                   <div className="content-pane">{routes}</div>
-//                 </SplitPane>
-//               </div>

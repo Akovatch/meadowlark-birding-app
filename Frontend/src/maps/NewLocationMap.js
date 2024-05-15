@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-
 import Map, { Marker, NavigationControl, GeolocateControl } from "react-map-gl";
 
 export default function NewLocationMap(props) {

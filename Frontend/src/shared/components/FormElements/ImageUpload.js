@@ -1,3 +1,5 @@
+/* Artifact from image picking functionality - left here just in case you decide to reintroduce image uploads */
+
 import React, { useRef, useState, useEffect } from "react";
 import "./ImageUpload.css";
 import Button from "./Button";

@@ -1,4 +1,4 @@
-/* Most map styling is done using the style prop */
+/* Note: most map styling is done using the style prop */
 
 .popup-content {
   display: flex;
@@ -31,7 +31,7 @@
 .mapboxgl-popup-anchor-top-left .mapboxgl-popup-tip,
 .mapboxgl-popup-anchor-top-right .mapboxgl-popup-tip {
   border: none;
-  }
+}
 
 
 

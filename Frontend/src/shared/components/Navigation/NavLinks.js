@@ -2,6 +2,7 @@ import React, { useContext } from "react";
 import { NavLink } from "react-router-dom";
 
 import { AuthContext } from "../../context/auth-context";
+
 import "./NavLinks.css";
 
 export default function NavLinks(props) {

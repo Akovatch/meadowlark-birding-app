@@ -36,60 +36,12 @@ export function filterLocations(
   });
 }
 
-// export function filterLocations(
-//   loadedLocations,
-//   speciesFilter,
-//   yearFilter,
-//   monthsFilter
-// ) {
-//   let locations = loadedLocations;
-//   // if (!loadedLocations) {
-//   //   return;
-//   // }
-
-//   if (speciesFilter !== "All Species") {
-//     locations = locations.filter((location) => {
-//       return location.sightings.find((sighting) => {
-//         return sighting.species === speciesFilter;
-//       });
-//     });
-//   }
-
-//   if (yearFilter !== "All Years") {
-//     locations = locations.filter((location) => {
-//       return location.sightings.find((sighting) => {
-//         return new Date(sighting.date).getFullYear() === yearFilter;
-//       });
-//     });
-//   }
-
-//   let selectedMonthIndexes = [];
-//   monthsFilter.forEach((month, index) => {
-//     if (month.checked) {
-//       selectedMonthIndexes.push(index);
-//     }
-//   });
-
-//   if (selectedMonthIndexes.length) {
-//     locations = locations.filter((location) => {
-//       return location.sightings.find((sighting) => {
-//         return selectedMonthIndexes.includes(
-//           new Date(sighting.date).getMonth()
-//         );
-//       });
-//     });
-//   }
-
-//   return locations;
-// }
-
 export function filterSightings(
   sightings,
   speciesFilter,
   yearFilter,
   monthsFilter
 ) {
-  // each sighting object has a species and date property
   let filteredSightings = sightings;
 
   if (speciesFilter !== "All Species") {
@@ -120,7 +72,6 @@ export function filterSightings(
   return filteredSightings;
 }
 
-// re-write me!!!
 export function filterStats(
   sightings,
   searchFilter,
@@ -129,7 +80,6 @@ export function filterStats(
   endDateFilter,
   uniqueFilter
 ) {
-  // each sighting object has a species and date property
   let filteredSightings = sightings;
 
   if (yearFilter) {
@@ -145,7 +95,6 @@ export function filterStats(
     });
   }
 
-  // search filtering logic
   if (searchFilter) {
     filteredSightings = filteredSightings.filter((sighting) => {
       const regex = new RegExp(searchFilter, "gi");
@@ -157,7 +106,6 @@ export function filterStats(
     });
   }
 
-  // unique filtering logic
   if (uniqueFilter) {
     const results = [];
     filteredSightings.forEach((sighting) => {
@@ -178,7 +126,6 @@ export function getSightingsCount(
   yearFilter,
   monthsFilter
 ) {
-  // each sighting object has a species and date property
   let filteredSightings = sightings;
 
   if (speciesFilter !== "All Species") {

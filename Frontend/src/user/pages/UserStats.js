@@ -1,8 +1,6 @@
 import React, { useEffect, useState, useContext } from "react";
 import { useParams } from "react-router-dom";
 import CountUp from "react-countup";
-import { GiSwan } from "react-icons/gi";
-import { GiHummingbird } from "react-icons/gi";
 
 import StatsTable from "../components/StatsTable";
 import StatsFilter from "../../filters/StatsFilter";

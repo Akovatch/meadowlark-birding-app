@@ -7,6 +7,7 @@ import MainHeader from "./MainHeader";
 import NavLinks from "./NavLinks";
 import SideDrawer from "./SideDrawer";
 import Backdrop from "../UIElements/Backdrop";
+
 import "./MainNavigation.css";
 
 export default function MainNavigation(props) {
@@ -45,9 +46,7 @@ export default function MainNavigation(props) {
           <span />
         </button>
         <div className="main-navigation-logo-container">
-          {/* <GiHeron color="white" size={50} style={{ margin: "5px" }} /> */}
           <FaBinoculars color="white" size={50} style={{ margin: "5px" }} />
-
           <h1 className="main-navigation__title">
             <Link to="/">eadowlark</Link>
           </h1>

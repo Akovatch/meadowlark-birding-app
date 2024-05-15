@@ -3,17 +3,16 @@ import ReactDOM from "react-dom";
 import { CSSTransition } from "react-transition-group";
 
 import Backdrop from "./Backdrop";
+
 import "./Modal.css";
 
-// A highly reusable modalOverlay component, which has default classes defined
-// but also allows the user to pass in custom classes too.
 function ModalOverlay(props) {
   const content = (
     <div className={`modal ${props.className}`} style={props.style}>
       <header className={`modal__header ${props.headerClass}`}>
         <h2>{props.header}</h2>
       </header>
-      <form // form tags will be ignored if content is not a form
+      <form
         onSubmit={
           props.onSubmit ? props.onSubmit : (event) => event.preventDefault()
         }

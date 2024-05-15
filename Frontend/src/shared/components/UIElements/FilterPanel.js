@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import MapFilter from "../../../filters/MapFilter";
-
 import { FcExpand } from "react-icons/fc";
+
+import MapFilter from "../../../filters/MapFilter";
 
 import "./FilterPanel.css";
 
@@ -44,12 +44,6 @@ export default function FilterPanel({ children }) {
       );
     }
   }
-
-  // let location = useLocation();
-
-  // if (location.pathname.includes("locations/") && !windowWide) {
-  //   return children;
-  // }
 
   return (
     <div className="split-panels-container">

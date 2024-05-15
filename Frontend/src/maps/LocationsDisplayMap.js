@@ -1,18 +1,16 @@
 import React, { useState, useContext } from "react";
 import { Link } from "react-router-dom";
-import { AuthContext } from "../shared/context/auth-context";
-
-import redPin from "../images/pin-red.png";
-import yellowPin from "../images/pin-yellow.png";
-
 import Map, {
   Marker,
   NavigationControl,
   Popup,
   GeolocateControl,
 } from "react-map-gl";
+
 import FiltersNotification from "../filters/FiltersNotification";
-import Card from "../shared/components/UIElements/Card";
+import { AuthContext } from "../shared/context/auth-context";
+import redPin from "../images/pin-red.png";
+import yellowPin from "../images/pin-yellow.png";
 
 import "./LocationsDisplayMap.css";
 
@@ -27,23 +25,7 @@ export default function LocationsDisplayMap(props) {
 
   const [popupInfo, setPopupInfo] = useState(null);
 
-  // {
-  //   title: { type: String, required: true },
-  //   coordinates: {
-  //     lat: { type: Number, required: true },
-  //     lng: { type: Number, required: true },
-  //   },
-  //   creator: { type: mongoose.Types.ObjectId, required: true, ref: "User" },
-  //   sightings: [
-  //     { type: mongoose.Types.ObjectId, required: true, ref: "Sighting" },
-  //   ],
-  // }
-
   function generateMarkers() {
-    // iterate through array of location objects, converting each into a marker
-    // give each an onClick callback prop that, for now, alerts the user of the name and number of sightings
-    // return an array of Marker elements
-
     let markers = props.locations.map((location) => {
       return (
         <div key={location.id}>
@@ -61,7 +43,6 @@ export default function LocationsDisplayMap(props) {
                   setPopupInfo(null);
                 }}
               >
-                {/* <h2>{location.sightings.length}</h2> */}
                 <img
                   src={location.creator === auth.userId ? yellowPin : redPin}
                   alt="location pin"
@@ -125,4 +106,4 @@ export default function LocationsDisplayMap(props) {
   );
 }
 
-// I deleted this from the head:  <link href='https://api.mapbox.com/mapbox-gl-js/v2.8.1/mapbox-gl.css' rel='stylesheet' />
+// Deleted from the head:  <link href='https://api.mapbox.com/mapbox-gl-js/v2.8.1/mapbox-gl.css' rel='stylesheet' />

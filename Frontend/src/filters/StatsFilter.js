@@ -1,22 +1,11 @@
 import React, { useContext } from "react";
 import Select from "react-select";
 import DatePicker from "react-datepicker";
+
 import ToggleSwitch from "../shared/components/FormElements/ToggleSwitch";
 
 import "./StatsFilter.css";
 import "react-datepicker/dist/react-datepicker.css";
-
-// props:
-// search={statsSearch}
-// year={statsYear}
-// startDate={statsStartDate}
-// endDate={statsEndDate}
-// unique={statsUnique}
-// setSearch={setStatsSearch}
-// setYear={setStatsYear}
-// setStartDate={setStatsStartDate}
-// setEndDate={setStatsEndDate}
-// setUnique={setStatsUnique}
 
 export default function StatsFilter(props) {
   function generateYearOptions() {

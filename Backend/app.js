@@ -15,6 +15,12 @@ const app = express();
 
 app.use(bodyParser.json());
 
+// for testing purposes - a simple console.log()
+// app.use((req, res, next) => {
+//   console.log(req.body);
+//   next();
+// });
+
 app.use("/uploads/images", express.static(path.join("uploads", "images")));
 
 app.use((req, res, next) => {
@@ -26,12 +32,6 @@ app.use((req, res, next) => {
   res.setHeader("Access-Control-Allow-Methods", "GET, POST, PATCH, DELETE");
   next();
 });
-
-// a simple console.log
-// app.use((req, res, next) => {
-//   console.log(`Inside of app.js: ${req.body.title}`);
-//   next();
-// });
 
 app.use("/api/locations", locationsRoutes);
 app.use("/api/users", usersRoutes);

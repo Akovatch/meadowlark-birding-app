@@ -1,4 +1,5 @@
 import React, { useContext } from "react";
+import { toast } from "react-toastify";
 
 import Input from "../../shared/components/FormElements/Input";
 import Button from "../../shared/components/FormElements/Button";
@@ -8,9 +9,7 @@ import { VALIDATOR_REQUIRE } from "../../shared/util/validators";
 import { useForm } from "../../shared/hooks/form-hook";
 import { useHttpClient } from "../../shared/hooks/http-hook";
 import { AuthContext } from "../../shared/context/auth-context";
-import { toast } from "react-toastify";
 
-// locationId(passed in), species, date, note
 export default function EditSighting(props) {
   const auth = useContext(AuthContext);
 
@@ -21,7 +20,6 @@ export default function EditSighting(props) {
         isValid: true,
       },
       date: {
-        // THIS WILL EVENTUALLY BE TREATED AS A DATE OBJECT? THIS WILL PROBABLY BE A DATE PICKER INPUT.
         value: props.date,
         isValid: true,
       },
@@ -33,16 +31,6 @@ export default function EditSighting(props) {
     true
   );
   const { isLoading, sendRequest } = useHttpClient();
-
-  // closeModal={closeEditModalHandler}
-  // id={props.sighting.id}
-  // creatorId={props.sighting.creator}
-  // locationId={props.sighting.location}
-  // species={props.sighting.species}
-  // date={props.sighting.date}
-  // note={props.sighting.note}
-  // onEditSighting={props.onEditSighting}
-  // onDeleteSighting={props.onDeleteSighting}
 
   async function sightingSubmitHandler(event) {
     event.preventDefault();
@@ -112,7 +100,7 @@ export default function EditSighting(props) {
           label="Note"
           initialValue={props.note}
           initialValid={true}
-          validators={[]} // IS THIS THE BEST WAY TO INDICATE NO VALIDATORS?
+          validators={[]}
           errorText="Please enter a valid note."
           optionalInput={true}
           onInput={inputHandler}

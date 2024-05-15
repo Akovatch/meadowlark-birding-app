@@ -1,15 +1,17 @@
 import { useState, useCallback, useEffect } from "react";
+import { useHistory } from "react-router-dom";
 
 let logoutTimer;
 
 export function useAuth() {
   // originally "null"
-  // at one point I changed it to localStorage.getItem("userData") but it resulted in the program treating 'null' as a valid token because
-  // I forgot to add JSON.parse()
+  // at one point I changed it to JSON.parse(localStorage.getItem("userData")) but it resulted in the program treating 'null' as a valid token
 
-  let browserStorage = JSON.parse(localStorage.getItem("userData"));
+  // let browserStorage = JSON.parse(localStorage.getItem("userData"));
+  // const [token, setToken] = useState(browserStorage && browserStorage.token);
 
-  const [token, setToken] = useState(browserStorage && browserStorage.token);
+  const [token, setToken] = useState(null);
+
   const [tokenExpirationDate, setTokenExpirationDate] = useState();
   const [userId, setUserId] = useState(null);
 
@@ -41,9 +43,6 @@ export function useAuth() {
     setUserId(null);
     localStorage.removeItem("userData");
   }, []);
-
-  console.log(token);
-  console.log(tokenExpirationDate);
 
   useEffect(() => {
     if (token && tokenExpirationDate) {

@@ -7,12 +7,6 @@ const router = express.Router();
 
 const options = require("../data");
 
-// simple console.log of req obj
-router.use((req, res, next) => {
-  console.log(req.body);
-  next();
-});
-
 router.get("/:sid", sightingsControllers.getSightingById);
 
 router.get("/user/:uid", sightingsControllers.getSightingsByUserId);

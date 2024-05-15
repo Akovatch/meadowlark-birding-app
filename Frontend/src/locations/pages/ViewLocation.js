@@ -1,12 +1,11 @@
 import React, { useEffect, useState, useContext } from "react";
 import { useParams, useHistory } from "react-router-dom";
-
 import Map, { Marker } from "react-map-gl";
 import { NavigationControl } from "react-map-gl";
-
 import { BiEditAlt } from "react-icons/bi";
 import { RiDeleteBinLine } from "react-icons/ri";
 import { IoMdReturnLeft } from "react-icons/io";
+import { toast } from "react-toastify";
 
 import Card from "../../shared/components/UIElements/Card";
 import LoadingSpinner from "../../shared/components/UIElements/LoadingSpinner";
@@ -18,7 +17,6 @@ import { AuthContext } from "../../shared/context/auth-context";
 import UpdateLocation from "../components/UpdateLocation";
 import LocationSightings from "../../sightings/components/LocationSightings";
 import FiltersNotification from "../../filters/FiltersNotification";
-import { toast } from "react-toastify";
 import redPin from "../../images/pin-red.png";
 import yellowPin from "../../images/pin-yellow.png";
 
@@ -36,7 +34,6 @@ export default function ViewLocation() {
 
   const history = useHistory();
 
-  // GET request on page load
   useEffect(() => {
     async function fetchLocation() {
       try {
@@ -49,8 +46,6 @@ export default function ViewLocation() {
 
     fetchLocation();
   }, [sendRequest, locationId]);
-
-  // Modal handlers
 
   function openEditLocationHandler() {
     setShowEditLocationModal(true);
@@ -114,8 +109,6 @@ export default function ViewLocation() {
         onCancel={closeEditLocationHandler}
         header={"Edit Location Name"}
         contenClass="location-item__modal-content"
-        // footerClass="location-item__modal-actions"
-        // footer={<Button onClick={closeEditLocationHandler}>CLOSE</Button>}
       >
         <UpdateLocation
           title={loadedLocation.title}
@@ -149,7 +142,6 @@ export default function ViewLocation() {
 
       <FiltersNotification />
       <div className="viewlocation-container">
-        {/* give specific styling classes - I stole these classes and they aren't working...*/}
         <div className="viewlocation-header">
           <div className="viewlocation-header-return-container">
             <Button type={"button"} onClick={() => history.goBack()}>

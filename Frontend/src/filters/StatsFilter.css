@@ -68,12 +68,9 @@ input.stats-field-input {
     flex-direction: row;
     flex: 1;
   }
-
 }
 
-/* FINISH ME! */
 @media (min-width: 900px) {
-
   .stats-form-container {
     display: flex;
     flex-direction: row;
@@ -123,5 +120,4 @@ input.stats-field-input {
   #date-unique-row {
     max-width: 300px;
   }
-
 }

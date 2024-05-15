@@ -30,12 +30,6 @@
   background-position: 40%;
 }
 
-/* .mystats-count-container {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-evenly;
-} */
-
 .mystats-total-count {
   display: flex;
   flex-direction: column;

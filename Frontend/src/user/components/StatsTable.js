@@ -1,10 +1,9 @@
 import React, { useState, useCallback } from "react";
 import { Link } from "react-router-dom";
-
 import DataTable from "react-data-table-component";
+
 import Card from "../../shared/components/UIElements/Card";
 import Button from "../../shared/components/FormElements/Button";
-// import { FilterContext } from "../../shared/context/filter-context";
 
 export default function StatsTable(props) {
   const [selectedSighting, setSelectedSighting] = useState(null);
@@ -85,7 +84,7 @@ export default function StatsTable(props) {
   ];
 
   function getAudubonLink(species) {
-    // Bicknell's Thrush => bicknells-thrush
+    // ex. Bicknell's Thrush => bicknells-thrush
     const path = species.toLowerCase().replace("'", "").split(" ").join("-");
     return (
       <a
@@ -126,13 +125,8 @@ export default function StatsTable(props) {
         setSelectedSighting(null);
       }
     },
-    [props.sightings] // adding this dependency fixes the problem
+    [props.sightings]
   );
-
-  // function resetTableSelection() {
-  //   setSelectedSighting(null);
-  //   setClearSelection((prev) => !prev);
-  // }
 
   function returnInfoLink() {
     if (!selectedSighting) {

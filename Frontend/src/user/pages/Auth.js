@@ -5,7 +5,6 @@ import Input from "../../shared/components/FormElements/Input";
 import Button from "../../shared/components/FormElements/Button";
 import ErrorModal from "../../shared/components/UIElements/ErrorModal";
 import LoadingSpinner from "../../shared/components/UIElements/LoadingSpinner";
-// import ImageUpload from "../../shared/components/FormElements/ImageUpload";
 import {
   VALIDATOR_EMAIL,
   VALIDATOR_MINLENGTH,
@@ -14,6 +13,7 @@ import {
 import { useForm } from "../../shared/hooks/form-hook";
 import { useHttpClient } from "../../shared/hooks/http-hook";
 import { AuthContext } from "../../shared/context/auth-context";
+
 import "./Auth.css";
 
 export default function Auth() {
@@ -41,7 +41,6 @@ export default function Auth() {
         {
           ...formState.inputs,
           name: undefined,
-          // image: undefined,
         },
         formState.inputs.email.isValid && formState.inputs.password.isValid
       );
@@ -53,10 +52,6 @@ export default function Auth() {
             value: "",
             isValid: false,
           },
-          // image: {
-          //   value: null,
-          //   isValid: false,
-          // },
         },
         false
       );
