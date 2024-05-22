@@ -1,15 +1,16 @@
 .stats-form-container {
   display: flex;
-  padding: 20px;
   flex-direction: column;
   background-color: lightgray;
   border: 2px solid black;
   border-radius: 10px;
   margin-bottom: 10px;
+  min-width: 400px;
 }
 
 .stats-form-row {
   display: flex;
+  justify-content: stretch;
 }
 
 .stats-field-group {
@@ -17,34 +18,71 @@
   padding: 20px;
   flex-direction: column;
   flex: 1;
+  max-width: 50%;
 }
 
 .stats-field-label {
-  margin: 5px 0;
-  min-width: 80px;
+  margin: 5px 10px 5px 5px;
+  min-width: 100px;
 }
 
 .stats-field-input {
   flex: 1;
 }
 
-.react-datepicker__input-container {
+/* .stats-date-input {
   flex: 1;
-  display: flex;
-  flex-direction: column;
-  align-items: stretch;
+  margin: 5px;
+} */
+
+#stats-date-label {
+  text-align: center;
 }
 
-input.stats-field-input {
+.stats-dates-container {
+  display: flex;
+  flex-direction: row;
+  padding-right: 0;
+  justify-content: center;
+  align-items: center;
   height: 38px;
 }
 
+.stats-date-input {
+  display: flex;
+  justify-content: center;
+  margin: 5px;
+}
+
+.start-date {
+  flex: 1;
+  text-align: center;
+  max-width: 75px;
+}
+
+.end-date {
+  flex: 1;
+  text-align: center;
+  max-width: 75px;
+}
+
+
+input.stats-field-input {
+  min-height: 38px;
+}
+
+#search-box {
+  height: 38px;
+  border: 1px solid grey;
+  border-radius: 5px;
+}
 
 .stats-clear-all-container {
   display: flex;
+  flex: 1;
+  padding: 20px;
   justify-content: center;
-  margin: 0 10px 10px 10px;
-  padding-top: 12px;
+  align-items: flex-end;
 }
 
 .stats-clear-all {
@@ -61,16 +99,75 @@ input.stats-field-input {
   border: 1px solid black;
 }
 
-
-@media (min-width: 768px) {
-  .stats-field-group {
-    display: flex;
-    flex-direction: row;
-    flex: 1;
-  }
+.stats-unique-label-container {
+  display: flex;
+  justify-content: center;
+  min-width: 100px;
 }
 
-@media (min-width: 900px) {
+.stats-unique-label {
+  margin: 5px 10px 5px 5px;
+  padding-left: 20px;
+  min-width: 100px;
+}
+
+.stats-unique-input {
+  display: flex;
+  justify-content: center;
+}
+
+
+
+#unique-field {
+  padding-left: 0;
+}
+
+/* Tooltip container */
+.tooltip {
+  position: relative;
+}
+
+/* Tooltip text */
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 170px;
+  background-color: #555;
+  color: #fff;
+  text-align: center;
+  padding: 5px;
+  border-radius: 6px;
+
+  /* Position the tooltip text */
+  position: absolute;
+  z-index: 1;
+  bottom: 125%;
+  left: 50%;
+  margin-left: -80px;
+
+  /* Fade in tooltip */
+  opacity: 0;
+  transition: opacity 0.5s ;
+}
+
+/* Tooltip arrow */
+.tooltip .tooltiptext::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #555 transparent transparent transparent;
+}
+
+/* Show the tooltip text when you mouse over the tooltip container */
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+  opacity: 1;
+}
+
+@media (min-width: 1100px) {
   .stats-form-container {
     display: flex;
     flex-direction: row;
@@ -93,31 +190,57 @@ input.stats-field-input {
     display: flex;
   }
 
-
   .stats-field-label {
     margin: 5px 0;
-    min-width: 80px;
+    min-width: 100px;
   }
 
   .stats-field-input {
     flex: 1;
   }
 
-  .react-datepicker__input-container {
+  /* .react-datepicker__input-container {
     flex: 1;
     display: flex;
     flex-direction: column;
     align-items: stretch;
-  }
+  } */
 
   .stats-clear-all-container {
     display: flex;
     justify-content: center;
-    height: 30px;
-    margin: 20px;
+    align-items: flex-end;
+    padding: 20px;
   }
 
-  #date-unique-row {
-    max-width: 300px;
+  .stats-unique-label-container {
+    display: flex;
+    justify-content: center;
   }
+
+  .stats-unique-input {
+    display: flex;
+    justify-content: center;
+  }
+
+  #unique-field {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+
+.start-date {
+  flex: 1;
+  width: 80px;
+}
+
+.end-date {
+  flex: 1;
+  width: 80px;
+}
+
+  /* #date-unique-row {
+    max-width: 300px;
+  } */
 }

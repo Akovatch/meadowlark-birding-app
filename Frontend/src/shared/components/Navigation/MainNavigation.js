@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { GiHeron } from "react-icons/gi";
 import { FaBinoculars } from "react-icons/fa";
 
 import MainHeader from "./MainHeader";
@@ -45,12 +44,12 @@ export default function MainNavigation(props) {
           <span />
           <span />
         </button>
-        <div className="main-navigation-logo-container">
-          <FaBinoculars color="white" size={50} style={{ margin: "5px" }} />
-          <h1 className="main-navigation__title">
-            <Link to="/">eadowlark</Link>
-          </h1>
-        </div>
+        <Link to="/">
+          <div className="main-navigation-logo-container">
+            <FaBinoculars color="white" size={50} style={{ margin: "5px" }} />
+            <h1 className="main-navigation__title">eadowlark</h1>
+          </div>
+        </Link>
         <nav className="main-navigation__header-nav">
           <NavLinks />
         </nav>

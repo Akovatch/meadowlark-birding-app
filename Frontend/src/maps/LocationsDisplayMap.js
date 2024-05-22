@@ -1,4 +1,4 @@
-import React, { useState, useContext } from "react";
+import React, { useState, useContext, useEffect } from "react";
 import { Link } from "react-router-dom";
 import Map, {
   Marker,
@@ -6,6 +6,9 @@ import Map, {
   Popup,
   GeolocateControl,
 } from "react-map-gl";
+
+import GeocoderControl from "./GeocoderControl";
+import "./GeocoderControl.css";
 
 import FiltersNotification from "../filters/FiltersNotification";
 import { AuthContext } from "../shared/context/auth-context";
@@ -20,10 +23,21 @@ export default function LocationsDisplayMap(props) {
   const [viewState, setViewState] = useState({
     longitude: -73.990593,
     latitude: 40.740121,
-    zoom: 10.0,
+    zoom: 8.0,
   });
 
   const [popupInfo, setPopupInfo] = useState(null);
+
+  useEffect(() => {
+    navigator.geolocation.getCurrentPosition((pos) => {
+      setViewState({
+        ...viewState,
+        latitude: pos.coords.latitude,
+        longitude: pos.coords.longitude,
+        zoom: 8.0,
+      });
+    });
+  }, []);
 
   function generateMarkers() {
     let markers = props.locations.map((location) => {
@@ -34,7 +48,7 @@ export default function LocationsDisplayMap(props) {
             latitude={location.coordinates.lat}
             anchor="bottom"
           >
-            <Link to={`/locations/${location.id}`}>
+            <Link to={`/location/${location.id}`}>
               <div
                 onMouseEnter={() => {
                   setPopupInfo(location);
@@ -78,10 +92,14 @@ export default function LocationsDisplayMap(props) {
         mapStyle="mapbox://styles/mapbox/streets-v12?optimize=true"
         scrollZoom={false}
       >
+        <GeocoderControl
+          mapboxAccessToken={process.env.REACT_APP_MAPBOX_KEY}
+          position="top-right"
+          marker={true}
+        />
         <NavigationControl />
         <GeolocateControl />
         {props.locations && generateMarkers()}
-
         {popupInfo && (
           <Popup
             className="map-tooltip"

@@ -22,7 +22,7 @@ export default function NavLinks(props) {
       )}
       {auth.isLoggedIn && (
         <li>
-          <NavLink to="/locations/new">ADD LOCATION</NavLink>
+          <NavLink to="/location/new">ADD LOCATION</NavLink>
         </li>
       )}
       {auth.isLoggedIn && (

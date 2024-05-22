@@ -18,6 +18,14 @@ import { AuthContext } from "../../shared/context/auth-context";
 
 import "./NewSighting.css";
 
+// PROPS:
+// key={sightings.length} // passing in a unique key clears the form
+// locationId={props.location.id}
+// updateSightings={setSightings}
+// panelOpen={newSightingPanelOpen}
+// openPanel={() => setNewSightingPanelOpen(true)}
+// closePanel={() => setNewSightingPanelOpen(false)}
+
 export default function NewSighting(props) {
   const auth = useContext(AuthContext);
   const [formState, inputHandler, setFormData] = useForm(
@@ -59,7 +67,6 @@ export default function NewSighting(props) {
           Authorization: "Bearer " + auth.token,
         }
       );
-      // resetForm();
       props.updateSightings((prevSightings) => [
         ...prevSightings,
         responseData.sighting,
@@ -68,50 +75,18 @@ export default function NewSighting(props) {
     } catch (err) {}
   }
 
-  // function resetForm() {
-  //   setFormData(
-  //     {
-  //       species: {
-  //         value: "",
-  //         isValid: false,
-  //       },
-  //       date: {
-  //         value: "",
-  //         isValid: false,
-  //       },
-  //       note: {
-  //         value: "",
-  //         isValid: true,
-  //       },
-  //     },
-  //     false
-  //   );
-  // }
-
-  if (!props.panelOpen) {
-    return (
-      <div className="newsighting-open-button-row">
-        <Button onClick={props.openPanel}>
-          ADD SIGHTING{" "}
-          <MdOutlineAddCircleOutline
-            style={{
-              position: "relative",
-              top: "3px",
-              left: "5px",
-            }}
-            size={18}
-          />
-        </Button>
-      </div>
-    );
-  }
-
   return (
     <>
       <ErrorModal error={error} onClear={clearError} />
 
-      <div className="newsighting-container">
-        <form className="newsighting-form" onSubmit={sightingSubmitHandler}>
+      <div
+        className={
+          props.panelOpen
+            ? "newsighting-container showing"
+            : "newsighting-container"
+        }
+      >
+        <form className="newsighting-form">
           {isLoading && <LoadingSpinner asOverlay />}
           <div className="newsighting-field-group">
             <h4 className="newsighting-field-label">Species</h4>
@@ -160,7 +135,8 @@ export default function NewSighting(props) {
             <div id="newsighting-button">
               <Button
                 className="newsighting-button"
-                type="submit"
+                type="button"
+                onClick={sightingSubmitHandler}
                 disabled={!formState.isValid}
               >
                 ADD SIGHTING
@@ -173,6 +149,26 @@ export default function NewSighting(props) {
             <FcCollapse style={{ color: "black" }} />
           </button>
         </div>
+      </div>
+
+      <div
+        className={
+          !props.panelOpen
+            ? "newsighting-open-button-row showing"
+            : "newsighting-open-button-row"
+        }
+      >
+        <Button onClick={props.openPanel}>
+          ADD SIGHTING{" "}
+          <MdOutlineAddCircleOutline
+            style={{
+              position: "relative",
+              top: "3px",
+              left: "5px",
+            }}
+            size={18}
+          />
+        </Button>
       </div>
     </>
   );

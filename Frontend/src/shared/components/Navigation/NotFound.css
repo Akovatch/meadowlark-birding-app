@@ -1,0 +1,15 @@
+.notfound {
+  display: flex;
+  border: 1px solid black;
+  border-radius: 10px;
+  background-color: lightgray;
+  width: 400px;
+  height: 100px;
+  margin: 20px auto;
+}
+
+.notfound-header {
+  align-self: center;
+  text-align: center;
+  width: 100%;
+}

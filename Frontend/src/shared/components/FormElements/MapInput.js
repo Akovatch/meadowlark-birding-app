@@ -5,13 +5,31 @@ import NewLocationMap from "../../../maps/NewLocationMap";
 import "react-datepicker/dist/react-datepicker.css";
 import "./Input.css";
 
+// function coordinatesValid() {
+//   // maxBounds: [
+//   //   [-171.0, 73.0],
+//   //   [-40.0, 12.0],
+//   // ],
+
+//   return (
+//     inputState.value.lng > -171.0 &&
+//     inputState.value.lng < -40.0 &&
+//     inputState.value.lat < 73.0 &&
+//     inputState.value.lat > 12.0
+//   );
+// }
+
 function inputReducer(state, action) {
   switch (action.type) {
     case "CHANGE":
       return {
         ...state,
         value: action.val,
-        isValid: true,
+        isValid:
+          action.val.lng > -171.0 &&
+          action.val.lng < -40.0 &&
+          action.val.lat < 73.0 &&
+          action.val.lat > 12.0,
       };
     case "TOUCH":
       return {
@@ -53,30 +71,36 @@ export default function MapInput(props) {
   }
 
   return (
-    <div
-      className={`form-control ${
-        !inputState.isValid &&
-        inputState.isTouched &&
-        !props.optionalInput &&
-        "form-control--invalid"
-      }`}
-    >
-      <label htmlFor={props.id}>{props.label}</label>
-      <input
-        id={props.id}
-        type={props.type}
-        placeholder={"Click on Map..."}
-        onChange={inputChangeHandler}
-        onBlur={touchHandler}
-        value={
-          inputState.value &&
-          `Longitude: ${inputState.value.lng}, Latitude: ${inputState.value.lat}`
-        }
+    <>
+      <div
+        className={`form-control ${
+          !inputState.isValid &&
+          inputState.isTouched &&
+          !props.optionalInput &&
+          "form-control--invalid"
+        }`}
+      >
+        <label htmlFor={props.id}>{props.label}</label>
+        <input
+          className="form-control-input"
+          id={props.id}
+          type={props.type}
+          placeholder={"Click on Map..."}
+          onChange={inputChangeHandler}
+          onBlur={touchHandler}
+          value={
+            inputState.value &&
+            `Longitude: ${inputState.value.lng}, Latitude: ${inputState.value.lat}`
+          }
+        />
+        {!inputState.isValid &&
+          inputState.isTouched &&
+          !props.optionalInput && <p>{props.errorText}</p>}
+      </div>
+      <NewLocationMap
+        getCoordinates={inputChangeHandler}
+        touchHander={touchHandler}
       />
-      {!inputState.isValid && inputState.isTouched && !props.optionalInput && (
-        <p>{props.errorText}</p>
-      )}
-      <NewLocationMap getCoordinates={inputChangeHandler} />
-    </div>
+    </>
   );
 }

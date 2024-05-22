@@ -1,23 +1,49 @@
 .background {
-  height: 800px;
+  height: 600px;
   width: auto;
   background-size: cover;
-  background-image: url("../images/pexels-elijah-pilchard-269100825-12792412.jpg");
-  background-position: 30%;
+  background-image: url("../images/meadowlark2.jpg");
+  background-repeat: no-repeat;
+  /* Can I get the picture to shift down more? */
+  background-position-x: 20%;
 }
 
 .translucent-box {
-  color: black;
-  text-align: center;
   position: absolute;
-  left: 0;
-  right: 0;
+  text-align: center;
+  left: 10%;
+  right: 10%;
   padding: 10px;
   margin-left: auto;
   margin-right: auto;
   max-width: 700px;
-  top: 200px;
+  min-width: 300px;
   background-color: white;
   opacity: 50%;
+  top: 130px;
 }
 
+@media (min-width: 650px) {
+  .background {
+    height: 600px;
+    width: auto;
+    background-size: cover;
+    background-image: url("../images/meadowlarkOG.jpg");
+    background-position: 30%;
+  }
+
+  .translucent-box {
+    color: black;
+    position: absolute;
+    left: 50%;
+    right: 10%;
+    padding: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 700px;
+    min-width: 300px;
+    top: 200px;
+    opacity: 50%;
+  }
+
+}

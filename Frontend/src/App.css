@@ -24,16 +24,13 @@ div#root {
 }
 
 .react-datepicker__input-container input {
+  min-height: 38px;
+}
+
+/* Make me a flex box so we can use space-around? */
+/* .stats-dates-container input {
   height: 38px;
-}
-
-.stats-dates-container input {
-  height: 20px;
-}
-
-.stats-dates-container .react-datepicker__input-container{
-  height: 20px;
-}
+} */
 
 a {
   color: black;
@@ -41,5 +38,5 @@ a {
 }
 
 a:hover {
-  color: blue;
+  color: paleturquoise;
 }

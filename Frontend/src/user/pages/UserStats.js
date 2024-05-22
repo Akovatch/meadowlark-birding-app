@@ -6,7 +6,6 @@ import StatsTable from "../components/StatsTable";
 import StatsFilter from "../../filters/StatsFilter";
 import ErrorModal from "../../shared/components/UIElements/ErrorModal";
 import LoadingSpinner from "../../shared/components/UIElements/LoadingSpinner";
-import Card from "../../shared/components/UIElements/Card";
 import { useHttpClient } from "../../shared/hooks/http-hook";
 import { filterStats } from "../../shared/util/filterHelpers";
 
@@ -14,11 +13,12 @@ import "./UserStats.css";
 
 export default function UserStats() {
   const [loadedSightings, setLoadedSightings] = useState();
-  const [statsSearch, setStatsSearch] = useState("");
-  const [statsYear, setStatsYear] = useState();
+  const [statsSpecies, setStatsSpecies] = useState("All Species");
+  const [statsYear, setStatsYear] = useState("All Years");
   const [statsStartDate, setStatsStartDate] = useState();
   const [statsEndDate, setStatsEndDate] = useState();
-  const [statsUnique, setStatsUnique] = useState(true);
+  const [statsUnique, setStatsUnique] = useState(false);
+  const [statsSearch, setStatsSearch] = useState("");
 
   const { isLoading, error, sendRequest, clearError } = useHttpClient();
 
@@ -65,7 +65,7 @@ export default function UserStats() {
         <div className="mystats-container">
           <div className="mystats-image-background1">
             <div className="mystats-total-count">
-              <h2 className="mystats-total-count-h2">Total Species Count</h2>
+              <h2 className="mystats-total-count-h2">Total Species</h2>
               <h2 className="mystats-total-count-h2">
                 {
                   <CountUp
@@ -75,8 +75,6 @@ export default function UserStats() {
                 }
               </h2>
             </div>
-          </div>
-          <div className="mystats-image-background2">
             <div className="mystats-year-count">
               <h2 className="mystats-total-count-h2">This Year</h2>
               <h2 className="mystats-total-count-h2">
@@ -87,21 +85,25 @@ export default function UserStats() {
               </h2>
             </div>
           </div>
+
           <StatsFilter
-            search={statsSearch}
+            species={statsSpecies}
             year={statsYear}
             startDate={statsStartDate}
             endDate={statsEndDate}
             unique={statsUnique}
-            setSearch={setStatsSearch}
+            search={statsSearch}
+            setSpecies={setStatsSpecies}
             setYear={setStatsYear}
             setStartDate={setStatsStartDate}
             setEndDate={setStatsEndDate}
             setUnique={setStatsUnique}
+            setSearch={setStatsSearch}
           />
           <StatsTable
             sightings={filterStats(
               loadedSightings,
+              statsSpecies,
               statsSearch,
               statsYear,
               statsStartDate,

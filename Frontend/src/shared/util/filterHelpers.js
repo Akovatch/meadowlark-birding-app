@@ -74,6 +74,7 @@ export function filterSightings(
 
 export function filterStats(
   sightings,
+  speciesFilter,
   searchFilter,
   yearFilter,
   startDateFilter,
@@ -82,7 +83,13 @@ export function filterStats(
 ) {
   let filteredSightings = sightings;
 
-  if (yearFilter) {
+  if (speciesFilter !== "All Species") {
+    filteredSightings = filteredSightings.filter((sighting) => {
+      return sighting.species === speciesFilter;
+    });
+  }
+
+  if (yearFilter !== "All Years") {
     filteredSightings = filteredSightings.filter((sighting) => {
       return new Date(sighting.date).getFullYear() === yearFilter;
     });

@@ -1,4 +1,5 @@
 import React, { useState, useContext } from "react";
+import { Navigate, useNavigate } from "react-router-dom";
 
 import Card from "../../shared/components/UIElements/Card";
 import Input from "../../shared/components/FormElements/Input";
@@ -20,6 +21,7 @@ export default function Auth() {
   const auth = useContext(AuthContext);
   const [isLoginMode, setIsLoginMode] = useState(true);
   const { isLoading, error, sendRequest, clearError } = useHttpClient();
+  const navigate = useNavigate();
 
   const [formState, inputHandler, setFormData] = useForm(
     {
@@ -78,6 +80,7 @@ export default function Auth() {
         );
 
         auth.login(responseData.userId, responseData.token);
+        navigate(-1);
       } catch (err) {}
     } else {
       try {
@@ -95,6 +98,7 @@ export default function Auth() {
         );
 
         auth.login(responseData.userId, responseData.token);
+        navigate(-1);
       } catch (err) {}
     }
   }
@@ -106,7 +110,7 @@ export default function Auth() {
         {isLoading && <LoadingSpinner asOverlay />}
         <h2>Login Required</h2>
         <hr />
-        <form onSubmit={authSubmitHandler}>
+        <form>
           {!isLoginMode && (
             <Input
               element="input"
@@ -136,7 +140,11 @@ export default function Auth() {
             errorText="Please enter a valid password (at least 6 characters)."
             onInput={inputHandler}
           ></Input>
-          <Button type="submit" disabled={!formState.isValid}>
+          <Button
+            type="submit"
+            onClick={authSubmitHandler}
+            disabled={!formState.isValid}
+          >
             {isLoginMode ? "LOGIN" : "SIGNUP"}
           </Button>
         </form>

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef } from "react";
 import ReactDOM from "react-dom";
 import { CSSTransition } from "react-transition-group";
 
@@ -8,8 +8,8 @@ import "./Modal.css";
 
 function ModalOverlay(props) {
   const content = (
-    <div className={`modal ${props.className}`} style={props.style}>
-      <header className={`modal__header ${props.headerClass}`}>
+    <div className="modal">
+      <header className="modal__header">
         <h2>{props.header}</h2>
       </header>
       <form
@@ -17,12 +17,8 @@ function ModalOverlay(props) {
           props.onSubmit ? props.onSubmit : (event) => event.preventDefault()
         }
       >
-        <div className={`modal__content ${props.contentClass}`}>
-          {props.children}
-        </div>
-        <footer className={`modal__footer ${props.footerClass}`}>
-          {props.footer}
-        </footer>
+        <div className="modal__content">{props.children}</div>
+        <footer className="modal__footer">{props.footer}</footer>
       </form>
     </div>
   );
@@ -39,7 +35,7 @@ export default function Modal(props) {
         mountOnEnter
         unmountOnExit
         timeout={200}
-        classnames="modal"
+        classNames="modal"
       >
         <ModalOverlay {...props} />
       </CSSTransition>

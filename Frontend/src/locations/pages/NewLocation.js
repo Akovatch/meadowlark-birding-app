@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import { useHistory } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 
 import Input from "../../shared/components/FormElements/Input";
@@ -35,7 +35,7 @@ export default function NewLocation() {
   );
   const { isLoading, error, sendRequest, clearError } = useHttpClient();
 
-  const history = useHistory();
+  const navigate = useNavigate();
 
   async function locationSubmitHandler(event) {
     event.preventDefault();
@@ -55,14 +55,14 @@ export default function NewLocation() {
         }
       );
       toast.success("New Location added!");
-      history.push(`/locations/${responseData.location.id}`);
+      navigate(`/location/${responseData.location.id}`);
     } catch (err) {}
   }
 
   return (
     <>
       <ErrorModal error={error} onClear={clearError} />
-      <form className="newlocation-form" onSubmit={locationSubmitHandler}>
+      <form className="newlocation-form">
         {isLoading && <LoadingSpinner asOverlay />}
         <Input
           id="title"
@@ -79,10 +79,14 @@ export default function NewLocation() {
           type="text"
           label="Coordinates"
           validators={[VALIDATOR_REQUIRE()]}
-          errorText="Please enter valid coordinates."
+          errorText="Please enter coordinates in North America."
           onInput={inputHandler}
         />
-        <Button type="submit" disabled={!formState.isValid}>
+        <Button
+          type="button"
+          onClick={locationSubmitHandler}
+          disabled={!formState.isValid}
+        >
           ADD LOCATION
         </Button>
       </form>

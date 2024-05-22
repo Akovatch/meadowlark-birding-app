@@ -49,7 +49,10 @@ export default function Input(props) {
   }
 
   function dateChangeHandler(date) {
-    console.log(date.toJSON());
+    if (!date) {
+      date = new Date();
+    }
+
     dispatch({
       type: "CHANGE",
       val: date.toJSON(),
@@ -105,7 +108,6 @@ export default function Input(props) {
   } else {
     element = (
       <DatePicker
-        showIcon
         selected={new Date(inputState.value)}
         // onBlur={touchHandler}
         onChange={(date) => dateChangeHandler(date)}

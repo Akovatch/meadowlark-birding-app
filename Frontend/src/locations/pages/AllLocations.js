@@ -19,7 +19,7 @@ export default function AllLocations() {
         const responseData = await sendRequest(
           `http://localhost:5000/api/locations`
         );
-        setLoadedLocations(responseData.locations); 
+        setLoadedLocations(responseData.locations);
       } catch (err) {}
     }
     fetchLocations();

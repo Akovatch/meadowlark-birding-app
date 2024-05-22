@@ -6,7 +6,6 @@ import { RiDeleteBinLine } from "react-icons/ri";
 
 import EditSighting from "./EditSighting";
 import Button from "../../shared/components/FormElements/Button";
-import FormModal from "../../shared/components/UIElements/FormModal";
 import Modal from "../../shared/components/UIElements/Modal";
 import LoadingSpinner from "../../shared/components/UIElements/LoadingSpinner";
 import { AuthContext } from "../../shared/context/auth-context";
@@ -60,8 +59,8 @@ export default function SightingsTable(props) {
   }
 
   function sortSpecies(rowA, rowB) {
-    let a = rowA.species.props.children;
-    let b = rowB.species.props.children;
+    let a = rowA.species;
+    let b = rowB.species;
 
     if (a > b) {
       return 1;
@@ -114,26 +113,26 @@ export default function SightingsTable(props) {
     },
   ];
 
-  function getAudubonLink(species) {
-    // ex. Bicknell's Thrush => bicknells-thrush
-    const path = species.toLowerCase().replace("'", "").split(" ").join("-");
-    return (
-      <a
-        href={"https://www.audubon.org/field-guide/bird/" + path}
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        {species}
-      </a>
-    );
-  }
+  // function getAudubonLink(species) {
+  //   // ex. Bicknell's Thrush => bicknells-thrush
+  //   const path = species.toLowerCase().replace("'", "").split(" ").join("-");
+  //   return (
+  //     <a
+  //       href={"https://www.audubon.org/field-guide/bird/" + path}
+  //       target="_blank"
+  //       rel="noopener noreferrer"
+  //     >
+  //       {species}
+  //     </a>
+  //   );
+  // }
 
   function generateTableData() {
     return props.sightings.map((sighting) => {
       let date = new Date(sighting.date);
       return {
         id: sighting.id,
-        species: getAudubonLink(sighting.species),
+        species: sighting.species,
         location: sighting.location.title,
         date: `${date.getMonth() + 1}/${date.getDate()}/${date.getFullYear()}`,
         note: sighting.note,
@@ -200,28 +199,26 @@ export default function SightingsTable(props) {
 
   return (
     <>
-      <FormModal
+      <Modal
         show={showEditSightingModal}
         onCancel={closeEditModalHandler}
         header={"Edit Sighting"}
         contenClass="sighting-item__modal-content"
       >
-        <div className="map-container">
-          {selectedSighting && (
-            <EditSighting
-              closeModal={closeEditModalHandler}
-              id={selectedSighting.id}
-              creatorId={selectedSighting.creator.id}
-              locationId={selectedSighting.location}
-              species={selectedSighting.species}
-              date={selectedSighting.date}
-              note={selectedSighting.note}
-              updateSightings={props.updateSightings}
-              resetTableSelection={resetTableSelection}
-            />
-          )}
-        </div>
-      </FormModal>
+        {selectedSighting && (
+          <EditSighting
+            closeModal={closeEditModalHandler}
+            id={selectedSighting.id}
+            creatorId={selectedSighting.creator.id}
+            locationId={selectedSighting.location}
+            species={selectedSighting.species}
+            date={selectedSighting.date}
+            note={selectedSighting.note}
+            updateSightings={props.updateSightings}
+            resetTableSelection={resetTableSelection}
+          />
+        )}
+      </Modal>
 
       <Modal
         show={showConfirmModal}

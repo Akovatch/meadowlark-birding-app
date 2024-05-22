@@ -1,5 +1,5 @@
 import React, { useEffect, useState, useContext } from "react";
-import { useParams, useHistory } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import Map, { Marker } from "react-map-gl";
 import { NavigationControl } from "react-map-gl";
 import { BiEditAlt } from "react-icons/bi";
@@ -32,7 +32,7 @@ export default function ViewLocation() {
   const [showConfirmModal, setShowConfirmModal] = useState(false);
   const [showEditLocationModal, setShowEditLocationModal] = useState(false);
 
-  const history = useHistory();
+  const navigate = useNavigate();
 
   useEffect(() => {
     async function fetchLocation() {
@@ -76,7 +76,7 @@ export default function ViewLocation() {
       );
 
       toast.success("Location deleted successfully!");
-      history.push("/" + auth.userId + "/locations");
+      navigate("/" + auth.userId + "/locations");
     } catch (err) {}
   }
 
@@ -92,7 +92,7 @@ export default function ViewLocation() {
     return (
       <div className="center" style={{ marginTop: "100px" }}>
         <Card>
-          <h2>Could not find location!</h2>
+          <h2>Location does not exist.</h2>
         </Card>
       </div>
     );
@@ -108,7 +108,6 @@ export default function ViewLocation() {
         show={showEditLocationModal}
         onCancel={closeEditLocationHandler}
         header={"Edit Location Name"}
-        contenClass="location-item__modal-content"
       >
         <UpdateLocation
           title={loadedLocation.title}
@@ -122,7 +121,6 @@ export default function ViewLocation() {
         show={showConfirmModal}
         onCancel={closeDeleteHandler}
         header="Are you sure?"
-        footerClass="location-item__modal-actions"
         footer={
           <>
             <Button inverse onClick={closeDeleteHandler}>
@@ -144,7 +142,7 @@ export default function ViewLocation() {
       <div className="viewlocation-container">
         <div className="viewlocation-header">
           <div className="viewlocation-header-return-container">
-            <Button type={"button"} onClick={() => history.goBack()}>
+            <Button type={"button"} onClick={() => navigate(-1)}>
               <IoMdReturnLeft />
             </Button>
           </div>

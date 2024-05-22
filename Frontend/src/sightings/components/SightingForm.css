@@ -8,3 +8,15 @@
   border-radius: 6px;
   background: white;
 }
+
+
+.showing {
+  opacity: 1;
+  display: flex;
+}
+
+@starting-style {
+  .showing {
+    opacity: 0;
+  }
+}

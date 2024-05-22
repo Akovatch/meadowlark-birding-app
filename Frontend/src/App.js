@@ -3,7 +3,7 @@ import {
   BrowserRouter as Router,
   Route,
   Redirect,
-  Switch,
+  Routes,
 } from "react-router-dom";
 import { ToastContainer } from "react-toastify";
 
@@ -17,6 +17,7 @@ import ViewLocation from "./locations/pages/ViewLocation";
 import Auth from "./user/pages/Auth";
 import FilterPanel from "./shared/components/UIElements/FilterPanel";
 import Footer from "./shared/components/Navigation/Footer";
+import NotFound from "./shared/components/Navigation/NotFound";
 import { AuthContext } from "./shared/context/auth-context";
 import { useAuth } from "./shared/hooks/auth-hook";
 import { FilterContext } from "./shared/context/filter-context";
@@ -42,58 +43,52 @@ function App() {
 
   if (token) {
     routes = (
-      <Switch>
-        <Route path="/" exact>
-          <Landing />
-        </Route>
-        <Route path="/locations" exact>
-          <FilterPanel>
-            <AllLocations />
-          </FilterPanel>
-        </Route>
-        <Route path="/:userId/locations">
-          <FilterPanel>
-            <UserLocations />
-          </FilterPanel>
-        </Route>
-        <Route path="/:userId/stats">
-          <UserStats />
-        </Route>
-        <Route path="/locations/new" exact>
-          <NewLocation />
-        </Route>
-        <Route path="/locations/:locationId">
-          <FilterPanel>
-            <ViewLocation />
-          </FilterPanel>
-        </Route>
-        <Redirect to="/" />
-      </Switch>
+      <Routes>
+        <Route path="/" element={<Landing />} />
+        <Route
+          path="locations"
+          element={
+            <FilterPanel>
+              <AllLocations />
+            </FilterPanel>
+          }
+        ></Route>
+        <Route
+          path=":userId/locations"
+          element={
+            <FilterPanel>
+              <UserLocations />
+            </FilterPanel>
+          }
+        />
+        <Route path=":userId/stats" element={<UserStats />} />
+        <Route path="location/new" element={<NewLocation />} />
+        <Route
+          path="location/:locationId"
+          element={
+            <FilterPanel>
+              <ViewLocation />
+            </FilterPanel>
+          }
+        />
+        <Route path="*" element={<NotFound />} />
+      </Routes>
     );
   } else {
     routes = (
-      <Switch>
-        <Route path="/" exact>
-          <Landing />
-        </Route>
-        <Route path="/locations" exact>
-          <FilterPanel>
-            <AllLocations />
-          </FilterPanel>
-        </Route>
-        <Route path="/locations/new" exact>
-          <Redirect to="/auth" />
-        </Route>
-        <Route path="/locations/:locationId">
-          <FilterPanel>
-            <ViewLocation />
-          </FilterPanel>
-        </Route>
-        <Route path="/auth">
-          <Auth />
-        </Route>
-        <Redirect to="/auth" />
-      </Switch>
+      <Routes>
+        <Route path="/" element={<Landing />} />
+        <Route
+          path="locations"
+          element={
+            <FilterPanel>
+              <AllLocations />
+            </FilterPanel>
+          }
+        ></Route>
+        <Route path="auth" element={<Auth />} />
+        <Route path="*" element={<Auth />} />
+      </Routes>
     );
   }
 

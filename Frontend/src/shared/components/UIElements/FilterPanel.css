@@ -8,10 +8,15 @@
 .filter-panel {
   padding: 0;
   width: auto;
-  height: auto;
+  max-height: 1000px;
   background-color: lightgray;
   border-radius: 10px;
   margin: 0 10px;
+  transition: all 400ms ease-in-out;
+}
+
+.closed {
+  max-height: 30px;
 }
 
 .filter-open-button-row {
@@ -43,3 +48,6 @@
     flex-grow: 1;
   }
 }
+
+
+

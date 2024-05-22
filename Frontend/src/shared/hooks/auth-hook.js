@@ -1,15 +1,8 @@
 import { useState, useCallback, useEffect } from "react";
-import { useHistory } from "react-router-dom";
 
 let logoutTimer;
 
 export function useAuth() {
-  // originally "null"
-  // at one point I changed it to JSON.parse(localStorage.getItem("userData")) but it resulted in the program treating 'null' as a valid token
-
-  // let browserStorage = JSON.parse(localStorage.getItem("userData"));
-  // const [token, setToken] = useState(browserStorage && browserStorage.token);
-
   const [token, setToken] = useState(null);
 
   const [tokenExpirationDate, setTokenExpirationDate] = useState();
@@ -20,10 +13,6 @@ export function useAuth() {
     setUserId(uid);
     const tokenExpiration =
       expirationDate || new Date(new Date().getTime() + 1000 * 60 * 60);
-
-    // For testing purposes - logs out after 10 seconds
-    // const tokenExpiration =
-    //   expirationDate || new Date(new Date().getTime() + 10000);
 
     setTokenExpirationDate(tokenExpiration);
 

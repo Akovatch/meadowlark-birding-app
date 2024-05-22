@@ -67,7 +67,7 @@ export default function EditSighting(props) {
 
   return (
     <>
-      <form className="sighting-form" onSubmit={sightingSubmitHandler}>
+      <form className="sighting-form">
         {isLoading && <LoadingSpinner asOverlay />}
         <Input
           id="species"
@@ -105,7 +105,11 @@ export default function EditSighting(props) {
           optionalInput={true}
           onInput={inputHandler}
         />
-        <Button type="submit" disabled={!formState.isValid}>
+        <Button
+          type="button"
+          onClick={sightingSubmitHandler}
+          disabled={!formState.isValid}
+        >
           EDIT SIGHTING
         </Button>
         <Button type="button" inverse onClick={props.closeModal}>

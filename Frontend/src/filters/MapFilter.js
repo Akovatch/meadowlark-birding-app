@@ -1,6 +1,8 @@
 import React, { useContext } from "react";
 import Select from "react-select";
 import { FcCollapse } from "react-icons/fc";
+import { FcExpand } from "react-icons/fc";
+import { CSSTransition } from "react-transition-group";
 
 import Checkbox from "../shared/components/FormElements/Checkbox";
 import speciesOptions from "../data";
@@ -114,6 +116,10 @@ export default function MapFilter(props) {
     }
   }
 
+  function togglePanelOpen() {
+    props.setPanelOpen((prevPanelOpen) => !prevPanelOpen);
+  }
+
   function filterSelected() {
     return (
       speciesFilter !== "All Species" ||
@@ -122,67 +128,83 @@ export default function MapFilter(props) {
     );
   }
 
+  let mapFilterContent = (
+    <div className="mapfilter-container">
+      <div className="filter-row">
+        <div className="filter-field-group">
+          <h3 className="filter-label">Species</h3>
+          <div className="filter-controls">
+            <Select
+              className="filter-input"
+              options={speciesOptions}
+              onChange={(option) => setSpeciesFilter(option.value)}
+              value={{
+                label: speciesFilter,
+                value: speciesFilter,
+              }}
+            />
+          </div>
+        </div>
+        <div className="filter-field-group">
+          <h3 className="filter-label">Year</h3>
+          <div className="filter-controls">
+            <Select
+              className="filter-input"
+              options={generateYearOptions()}
+              onChange={(option) => setYearFilter(option.value)}
+              value={{
+                label: yearFilter,
+                value: yearFilter,
+              }}
+            />
+          </div>
+        </div>
+      </div>
+      <div className="filter-row">
+        <div className="filter-field-group">
+          <h3 className="filter-label">Months</h3>
+          <div className="filter-controls">
+            <div className="filter-months-input">
+              {generateMonthCheckboxes("grid")}
+            </div>
+          </div>
+        </div>
+        <div className="filter-clear-all-field-group">
+          <button
+            className={`filter-clear-all ${
+              filterSelected() ? "clear-filters-button-active" : ""
+            }`}
+            onClick={() => resetHandler("all")}
+          >
+            Clear Filters
+          </button>
+        </div>
+      </div>
+    </div>
+  );
+
   return (
     <>
-      <div className="mapfilter-container">
-        <div className="filter-row">
-          <div className="filter-field-group">
-            <h3 className="filter-label">Species</h3>
-            <div className="filter-controls">
-              <Select
-                className="filter-input"
-                options={speciesOptions}
-                onChange={(option) => setSpeciesFilter(option.value)}
-                value={{
-                  label: speciesFilter,
-                  value: speciesFilter,
-                }}
-              />
-            </div>
-          </div>
-          <div className="filter-field-group">
-            <h3 className="filter-label">Year</h3>
-            <div className="filter-controls">
-              <Select
-                className="filter-input"
-                options={generateYearOptions()}
-                onChange={(option) => setYearFilter(option.value)}
-                value={{
-                  label: yearFilter,
-                  value: yearFilter,
-                }}
-              />
-            </div>
-          </div>
-        </div>
-        <div className="filter-row">
-          <div className="filter-field-group">
-            <h3 className="filter-label">Months</h3>
-            <div className="filter-controls">
-              <div className="filter-months-input">
-                {generateMonthCheckboxes("grid")}
-              </div>
-            </div>
-          </div>
-          <div className="filter-clear-all-field-group">
-            <button
-              className={`filter-clear-all ${
-                filterSelected() ? "clear-filters-button-active" : ""
-              }`}
-              onClick={() => resetHandler("all")}
-            >
-              Clear Filters
-            </button>
-          </div>
-        </div>
-      </div>
-      <div className="filter-close-button-row">
-        {props.includeCloseButton && (
-          <button onClick={props.closePanel}>
-            <FcCollapse />
+      {!props.windowWide && (
+        <div className="filter-close-button-row">
+          <button onClick={() => togglePanelOpen()}>
+            Filters {props.panelOpen ? <FcCollapse /> : <FcExpand />}
           </button>
-        )}
-      </div>
+        </div>
+      )}
+      {props.windowWide ? (
+        mapFilterContent
+      ) : (
+        <CSSTransition
+          in={props.panelOpen}
+          mountOnEnter
+          unmountOnExit
+          timeout={500}
+          classNames="filter-panel"
+        >
+          {mapFilterContent}
+        </CSSTransition>
+      )}
     </>
   );
 }

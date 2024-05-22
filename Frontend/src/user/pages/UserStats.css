@@ -2,25 +2,34 @@
   padding: 10px;
 }
 
+/* .mystats-images-container {
+  display: flex;
+  flex-direction: column;
+} */
+
 .mystats-image-background1 {
   display: flex;
-  justify-content: center;
-  align-items: flex-end;
-  height: 500px;
+  flex: 1;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: flex-start;
+  min-height: 500px;
   padding-bottom: 50px;
+  padding-left: 5%;
   margin-bottom: 10px;
   border-radius: 10px;
   background-image: url("../../images/pileated-banner.jpg");
   background-repeat: no-repeat;
   background-size: cover;
-  background-position: 60%;
+  background-position: 65%;
 }
-
+/*
 .mystats-image-background2 {
   display: flex;
+  flex: 1;
   justify-content: center;
   align-items: flex-end;
-  height: 500px;
+  min-height: 500px;
   padding-bottom: 50px;
   margin-bottom: 10px;
   border-radius: 10px;
@@ -28,7 +37,7 @@
   background-repeat: no-repeat;
   background-size: cover;
   background-position: 40%;
-}
+} */
 
 .mystats-total-count {
   display: flex;
@@ -37,7 +46,7 @@
   background-color: white;
   margin: 0 5px;
   padding: 20px;
-  width: 300px;
+  width: 250px;
   opacity: 70%;
 }
 
@@ -49,11 +58,43 @@
   justify-content: space-around;
   margin: 0 5px;
   padding: 20px;
-  width: 300px;
+  width: 250px;
   opacity: 70%;
 }
 
 .mystats-total-count-h2 {
   margin: 5px;
   text-align: center;
+}
+
+@media (min-width: 900px) {
+  .mystats-images-container {
+    flex-direction: row;
+  }
+
+  .mystats-image-background1 {
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: flex-end;
+    margin-right: 10px;
+
+
+  }
+
+  /* .mystats-image-background1 {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: flex-start;
+    min-height: 500px;
+    padding-bottom: 50px;
+    padding-left: 10%;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    background-image: url("../../images/pileated-banner.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 65%;
+  } */
 }

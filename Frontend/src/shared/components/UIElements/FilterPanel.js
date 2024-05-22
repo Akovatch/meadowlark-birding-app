@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { FcExpand } from "react-icons/fc";
+import { CSSTransition } from "react-transition-group";
 
 import MapFilter from "../../../filters/MapFilter";
 
@@ -19,35 +20,21 @@ export default function FilterPanel({ children }) {
 
   window.addEventListener("resize", handleResize);
 
-  function getMapFilterByScreenWidth() {
-    if (windowWide) {
-      return (
-        <MapFilter
-          includeCloseButton={false}
-          closePanel={() => setPanelOpen(false)}
-        />
-      );
-    } else if (panelOpen) {
-      return (
-        <MapFilter
-          includeCloseButton={true}
-          closePanel={() => setPanelOpen(false)}
-        />
-      );
-    } else {
-      return (
-        <div className="filter-open-button-row">
-          <button onClick={() => setPanelOpen(true)}>
-            Filters <FcExpand />
-          </button>
-        </div>
-      );
-    }
-  }
-
   return (
     <div className="split-panels-container">
-      <div className="filter-panel">{getMapFilterByScreenWidth()}</div>
+      <div
+        className={
+          windowWide || (panelOpen && !windowWide)
+            ? "filter-panel"
+            : "filter-panel closed"
+        }
+      >
+        <MapFilter
+          panelOpen={panelOpen}
+          setPanelOpen={setPanelOpen}
+          windowWide={windowWide}
+        />
+      </div>
       <div className="content-panel">{children}</div>
     </div>
   );

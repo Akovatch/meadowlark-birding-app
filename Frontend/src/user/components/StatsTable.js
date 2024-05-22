@@ -10,8 +10,8 @@ export default function StatsTable(props) {
   const [clearSelection, setClearSelection] = useState(false);
 
   function sortSpecies(rowA, rowB) {
-    let a = rowA.species.props.children;
-    let b = rowB.species.props.children;
+    let a = rowA.species;
+    let b = rowB.species;
 
     if (a > b) {
       return 1;
@@ -83,27 +83,27 @@ export default function StatsTable(props) {
     },
   ];
 
-  function getAudubonLink(species) {
-    // ex. Bicknell's Thrush => bicknells-thrush
-    const path = species.toLowerCase().replace("'", "").split(" ").join("-");
-    return (
-      <a
-        href={"https://www.audubon.org/field-guide/bird/" + path}
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        {species}
-      </a>
-    );
-  }
+  // function getAudubonLink(species) {
+  //   // ex. Bicknell's Thrush => bicknells-thrush
+  //   const path = species.toLowerCase().replace("'", "").split(" ").join("-");
+  //   return (
+  //     <a
+  //       href={"https://www.audubon.org/field-guide/bird/" + path}
+  //       target="_blank"
+  //       rel="noopener noreferrer"
+  //     >
+  //       {species}
+  //     </a>
+  //   );
+  // }
 
   const sightingsData = props.sightings.map((sighting, index) => {
     let date = new Date(sighting.date);
     return {
       id: sighting.id,
-      species: getAudubonLink(sighting.species),
+      species: sighting.species,
       location: (
-        <Link to={`/locations/${sighting.location.id}`}>
+        <Link to={`/location/${sighting.location.id}`}>
           {sighting.location.title}
         </Link>
       ),
