@@ -1,50 +1,32 @@
+
 .mystats-container {
-  padding: 10px;
+  padding: 0 10px 10px;
 }
 
-/* .mystats-images-container {
-  display: flex;
-  flex-direction: column;
-} */
-
-.mystats-image-background1 {
+.mystats-image-background {
   display: flex;
   flex: 1;
   flex-direction: column;
-  justify-content: space-around;
-  align-items: flex-start;
+  justify-content: space-between;
+  align-items: center;
   min-height: 500px;
-  padding-bottom: 50px;
+  padding-bottom: 30px;
   padding-left: 5%;
   margin-bottom: 10px;
   border-radius: 10px;
-  background-image: url("../../images/pileated-banner.jpg");
+  /* background-image: url("../../images/pileated-banner.jpg"); */
+  background-image: url("../../images/woodpecker.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: 65%;
 }
-/*
-.mystats-image-background2 {
-  display: flex;
-  flex: 1;
-  justify-content: center;
-  align-items: flex-end;
-  min-height: 500px;
-  padding-bottom: 50px;
-  margin-bottom: 10px;
-  border-radius: 10px;
-  background-image: url("../../images/nuthatch-banner.jpg");
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: 40%;
-} */
 
 .mystats-total-count {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
   background-color: white;
-  margin: 0 5px;
+  margin: 30px 5px;
   padding: 20px;
   width: 250px;
   opacity: 70%;
@@ -52,7 +34,7 @@
 
 .mystats-year-count {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
   background-color: white;
   justify-content: space-around;
@@ -67,18 +49,58 @@
   text-align: center;
 }
 
-@media (min-width: 900px) {
+
+@media (min-width: 550px) {
+  .mystats-image-background {
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: flex-start;
+    min-height: 500px;
+    padding-bottom: 30px;
+    padding-left: 5%;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    /* background-image: url("../../images/pileated-banner.jpg"); */
+    background-image: url("../../images/woodpecker.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 65%;
+  }
+
+  .mystats-total-count {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: white;
+    margin: 30px 5px;
+    padding: 20px;
+    width: 250px;
+    opacity: 70%;
+  }
+
+  .mystats-year-count {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: white;
+    justify-content: space-around;
+    margin: 30px 5px;
+    padding: 20px;
+    width: 250px;
+    opacity: 70%;
+  }
+}
+
+@media (min-width: 1300px) {
   .mystats-images-container {
     flex-direction: row;
   }
 
-  .mystats-image-background1 {
+  .mystats-image-background {
     flex-direction: row;
     justify-content: space-around;
     align-items: flex-end;
     margin-right: 10px;
-
-
   }
 
   /* .mystats-image-background1 {

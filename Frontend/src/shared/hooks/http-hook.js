@@ -4,7 +4,7 @@ export function useHttpClient() {
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState();
 
-  const activeHttpRequests = useRef([]); 
+  const activeHttpRequests = useRef([]);
 
   const sendRequest = useCallback(
     async (url, method = "GET", body = null, headers = {}) => {
@@ -35,7 +35,7 @@ export function useHttpClient() {
       } catch (err) {
         setError(err.message);
         setIsLoading(false);
-        throw err; 
+        throw err;
       }
     },
     []

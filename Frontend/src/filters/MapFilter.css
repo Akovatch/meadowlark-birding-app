@@ -84,6 +84,10 @@
   border-top: 1px solid black;
 }
 
+#filter-species-select {
+  z-index: 3;
+}
+
 @media (min-width: 768px) {
   .filter-row {
     display: flex;

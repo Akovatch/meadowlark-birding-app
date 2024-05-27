@@ -28,11 +28,7 @@ export default function AllLocations() {
   return (
     <>
       <ErrorModal error={error} onClear={clearError} />
-      {isLoading && (
-        <div className="center">
-          <LoadingSpinner />
-        </div>
-      )}
+      {isLoading && <LoadingSpinner />}
       {!isLoading && loadedLocations && (
         <LocationsDisplayMap
           locations={filterLocations(

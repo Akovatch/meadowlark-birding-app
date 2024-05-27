@@ -11,10 +11,6 @@
   align-items: center;
 }
 
-.viewlocation-header-return-container {
-  width: 173px;
-}
-
 .viewlocation-header-title {
   text-align: center;
 
@@ -36,6 +32,7 @@
 }
 
 .viewlocation-creator {
+  margin: 0 0 10px 0;
   color: gray;
   text-align: center;
 }

@@ -140,20 +140,19 @@ export default function ViewLocation() {
 
       <FiltersNotification />
       <div className="viewlocation-container">
+        <div className="viewlocation-header-info">
+          <h2 className="viewlocation-header-title">{loadedLocation.title}</h2>
+          {auth.userId !== loadedLocation.creator.id && (
+            <p className="viewlocation-creator">{`Creator: ${loadedLocation.creator.name}`}</p>
+          )}
+        </div>
         <div className="viewlocation-header">
           <div className="viewlocation-header-return-container">
             <Button type={"button"} onClick={() => navigate(-1)}>
               <IoMdReturnLeft />
             </Button>
           </div>
-          <div className="viewlocation-header-info">
-            <h2 className="viewlocation-header-title">
-              {loadedLocation.title}
-            </h2>
-            {auth.userId !== loadedLocation.creator.id && (
-              <p className="viewlocation-creator">{`Creator: ${loadedLocation.creator.name}`}</p>
-            )}
-          </div>
+
           <div className="viewlocation-header-controls">
             {auth.userId === loadedLocation.creator.id && (
               <Button onClick={openEditLocationHandler}>

@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useContext } from "react";
 import { toast } from "react-toastify";
 import { MdOutlineAddCircleOutline } from "react-icons/md";
 import { FcCollapse } from "react-icons/fc";
@@ -18,17 +18,9 @@ import { AuthContext } from "../../shared/context/auth-context";
 
 import "./NewSighting.css";
 
-// PROPS:
-// key={sightings.length} // passing in a unique key clears the form
-// locationId={props.location.id}
-// updateSightings={setSightings}
-// panelOpen={newSightingPanelOpen}
-// openPanel={() => setNewSightingPanelOpen(true)}
-// closePanel={() => setNewSightingPanelOpen(false)}
-
 export default function NewSighting(props) {
   const auth = useContext(AuthContext);
-  const [formState, inputHandler, setFormData] = useForm(
+  const [formState, inputHandler] = useForm(
     {
       species: {
         value: "",
@@ -71,6 +63,7 @@ export default function NewSighting(props) {
         ...prevSightings,
         responseData.sighting,
       ]);
+      props.setLastSubmittedDate(formState.inputs.date.value);
       toast.success("Sighting added successfully!");
     } catch (err) {}
   }
@@ -103,7 +96,11 @@ export default function NewSighting(props) {
             />
           </div>
           <div className="newsighting-field-group">
-            <h4 className="newsighting-field-label">Date</h4>
+            <div className="date-holding-title">
+              <h4 className="newsighting-field-label">Date</h4>
+              {props.lastSubmittedDate && <p>Holding...</p>}
+            </div>
+
             <Input
               className="newsighting-field-input"
               id="date"
@@ -111,10 +108,15 @@ export default function NewSighting(props) {
               type="date"
               validators={[]}
               initialValid={true}
-              initialValue={new Date().toJSON()}
+              initialValue={
+                props.lastSubmittedDate
+                  ? new Date(props.lastSubmittedDate).toJSON()
+                  : new Date().toJSON()
+              }
               optionalInput={true}
               errorText="Please enter a valid date."
               onInput={inputHandler}
+              lastSubmittedDate={props.lastSubmittedDate}
             />
           </div>
           <div className="newsighting-field-group">

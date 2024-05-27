@@ -109,7 +109,6 @@ export default function Input(props) {
     element = (
       <DatePicker
         selected={new Date(inputState.value)}
-        // onBlur={touchHandler}
         onChange={(date) => dateChangeHandler(date)}
       />
     );

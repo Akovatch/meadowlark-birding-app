@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useContext } from "react";
+import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import CountUp from "react-countup";
 
@@ -63,7 +63,7 @@ export default function UserStats() {
       )}
       {!isLoading && loadedSightings && (
         <div className="mystats-container">
-          <div className="mystats-image-background1">
+          <div className="mystats-image-background">
             <div className="mystats-total-count">
               <h2 className="mystats-total-count-h2">Total Species</h2>
               <h2 className="mystats-total-count-h2">

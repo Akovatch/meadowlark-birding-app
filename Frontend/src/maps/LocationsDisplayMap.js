@@ -20,11 +20,13 @@ import "./LocationsDisplayMap.css";
 export default function LocationsDisplayMap(props) {
   const auth = useContext(AuthContext);
 
-  const [viewState, setViewState] = useState({
-    longitude: -73.990593,
-    latitude: 40.740121,
-    zoom: 8.0,
-  });
+  const [viewState, setViewState] = useState(
+    JSON.parse(localStorage.getItem("coordinates")) || {
+      longitude: -73.990593,
+      latitude: 40.740121,
+      zoom: 8.0,
+    }
+  );
 
   const [popupInfo, setPopupInfo] = useState(null);
 
@@ -37,6 +39,15 @@ export default function LocationsDisplayMap(props) {
         zoom: 8.0,
       });
     });
+
+    localStorage.setItem(
+      "coordinates",
+      JSON.stringify({
+        latitude: viewState.latitude,
+        longitude: viewState.longitude,
+        zoom: 8.0,
+      })
+    );
   }, []);
 
   function generateMarkers() {
@@ -79,6 +90,7 @@ export default function LocationsDisplayMap(props) {
         className="map"
         reuseMaps
         mapboxAccessToken={process.env.REACT_APP_MAPBOX_KEY}
+        initialViewState={viewState}
         {...viewState}
         style={{
           height: "600px",
@@ -95,6 +107,7 @@ export default function LocationsDisplayMap(props) {
         <GeocoderControl
           mapboxAccessToken={process.env.REACT_APP_MAPBOX_KEY}
           position="top-right"
+          // countries={("United States", "Canada", "Mexico")}
           marker={true}
         />
         <NavigationControl />

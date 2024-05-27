@@ -1,4 +1,4 @@
-import React, { useState, useContext, useCallback } from "react";
+import React, { useState, useContext, useCallback, useEffect } from "react";
 import DataTable from "react-data-table-component";
 import { toast } from "react-toastify";
 import { BiEditAlt } from "react-icons/bi";
@@ -23,6 +23,19 @@ export default function SightingsTable(props) {
 
   const { isLoading, sendRequest } = useHttpClient();
   const auth = useContext(AuthContext);
+
+  useEffect(() => {
+    function removeContextHeader() {
+      let container = document.getElementsByClassName(
+        "sightingstable-container"
+      )[0];
+      let divToRemove =
+        container.firstElementChild.firstElementChild.nextElementSibling
+          .firstElementChild;
+      divToRemove.remove();
+    }
+    removeContextHeader();
+  }, []);
 
   function openEditModalHandler() {
     setEditSightingModal(true);

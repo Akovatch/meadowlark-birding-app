@@ -6,11 +6,13 @@ import "./GeocoderControl.css";
 export default function NewLocationMap(props) {
   const [markerCoordinates, setMarkerCoordinates] = useState(null);
 
-  const [viewState, setViewState] = useState({
-    longitude: -73.990593,
-    latitude: 40.740121,
-    zoom: 10.0,
-  });
+  const [viewState, setViewState] = useState(
+    JSON.parse(localStorage.getItem("coordinates")) || {
+      longitude: -73.990593,
+      latitude: 40.740121,
+      zoom: 8.0,
+    }
+  );
 
   useEffect(() => {
     navigator.geolocation.getCurrentPosition((pos) => {
@@ -21,8 +23,16 @@ export default function NewLocationMap(props) {
         zoom: 8.0,
       });
     });
-  }, []);
 
+    localStorage.setItem(
+      "coordinates",
+      JSON.stringify({
+        latitude: viewState.latitude,
+        longitude: viewState.longitude,
+        zoom: 8.0,
+      })
+    );
+  }, []);
   function handleClick(evt) {
     props.touchHander();
     props.getCoordinates({ lng: evt.lngLat.lng, lat: evt.lngLat.lat });
@@ -33,11 +43,15 @@ export default function NewLocationMap(props) {
     <Map
       reuseMaps
       mapboxAccessToken={process.env.REACT_APP_MAPBOX_KEY}
+      initialViewState={viewState}
       {...viewState}
       onMove={(evt) => setViewState(evt.viewState)}
       style={{
         height: "400px",
         overflow: "hidden",
+        border: "1px solid grey",
+        borderRadius: "10px",
+        marginBottom: "10px",
       }}
       cursor="crosshair"
       onClick={handleClick}

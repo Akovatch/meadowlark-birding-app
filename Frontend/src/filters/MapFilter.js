@@ -136,6 +136,7 @@ export default function MapFilter(props) {
           <div className="filter-controls">
             <Select
               className="filter-input"
+              id="filter-species-select"
               options={speciesOptions}
               onChange={(option) => setSpeciesFilter(option.value)}
               value={{

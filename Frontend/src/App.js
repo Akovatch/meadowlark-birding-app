@@ -5,7 +5,7 @@ import {
   Redirect,
   Routes,
 } from "react-router-dom";
-import { ToastContainer } from "react-toastify";
+import { Bounce, ToastContainer } from "react-toastify";
 
 import Landing from "./landing/Landing";
 import AllLocations from "./locations/pages/AllLocations";
@@ -86,6 +86,14 @@ function App() {
             </FilterPanel>
           }
         ></Route>
+        <Route
+          path="location/:locationId"
+          element={
+            <FilterPanel>
+              <ViewLocation />
+            </FilterPanel>
+          }
+        />
         <Route path="auth" element={<Auth />} />
         <Route path="*" element={<Auth />} />
       </Routes>
@@ -114,7 +122,7 @@ function App() {
           </Router>
         </FilterContext.Provider>
       </AuthContext.Provider>
-      <ToastContainer theme="dark" />
+      <ToastContainer theme="dark" autoClose={2000} />
     </>
   );
 }

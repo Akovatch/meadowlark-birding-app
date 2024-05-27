@@ -5,7 +5,7 @@
   border: 2px solid black;
   border-radius: 10px;
   margin-bottom: 10px;
-  min-width: 400px;
+  min-width: 300px;
 }
 
 .stats-form-row {
@@ -57,13 +57,17 @@
 .start-date {
   flex: 1;
   text-align: center;
-  max-width: 75px;
+  max-width: 50px;
+  border: 1px solid grey;
+  border-radius: 10px;
 }
 
 .end-date {
   flex: 1;
   text-align: center;
-  max-width: 75px;
+  max-width: 50px;
+  border: 1px solid grey;
+  border-radius: 10px;
 }
 
 
@@ -167,6 +171,24 @@ input.stats-field-input {
   opacity: 1;
 }
 
+@media (min-width: 400px) {
+  .start-date {
+    flex: 1;
+    text-align: center;
+    max-width: 75px;
+    border: 1px solid grey;
+    border-radius: 10px;
+  }
+
+  .end-date {
+    flex: 1;
+    text-align: center;
+    max-width: 75px;
+    border: 1px solid grey;
+    border-radius: 10px;
+  }
+}
+
 @media (min-width: 1100px) {
   .stats-form-container {
     display: flex;
@@ -198,13 +220,6 @@ input.stats-field-input {
   .stats-field-input {
     flex: 1;
   }
-
-  /* .react-datepicker__input-container {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    align-items: stretch;
-  } */
 
   .stats-clear-all-container {
     display: flex;

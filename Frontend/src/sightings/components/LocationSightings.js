@@ -11,6 +11,7 @@ export default function LocationSightings(props) {
   const { speciesFilter, yearFilter, monthsFilter } = useContext(FilterContext);
   const [sightings, setSightings] = useState(props.location.sightings);
   const [newSightingPanelOpen, setNewSightingPanelOpen] = useState(false);
+  const [lastSubmittedDate, setLastSubmittedDate] = useState();
 
   useEffect(() => {
     props.setLocation((prevLocation) => {
@@ -34,6 +35,8 @@ export default function LocationSightings(props) {
           panelOpen={newSightingPanelOpen}
           openPanel={() => setNewSightingPanelOpen(true)}
           closePanel={() => setNewSightingPanelOpen(false)}
+          lastSubmittedDate={lastSubmittedDate}
+          setLastSubmittedDate={setLastSubmittedDate}
         />
       )}
       <br />

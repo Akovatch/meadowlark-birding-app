@@ -1,9 +1,8 @@
 .footer-container {
   color: #2A006E;
   display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: space-around;
+  flex-direction: column;
+  justify-content: center;
   align-items: center;
   background: gray;
   border: 1px solid black;
@@ -17,29 +16,29 @@
   background-color: #29006E;
 }
 
-.footer-field {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  max-width: 400px;
-  min-width: 300px;
-  margin: 0 10px;
+.footer-field h3 {
+  text-align: center;
 }
-
 
 .footer-icons {
   display: flex;
   justify-content: space-between;
   align-content: center;
-  width: 100%;
-  min-width: 300px;
-  max-width: 400px;
+  width: 250px;
 }
 
 .footer-icon {
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+.footer-field {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 335px;
+  margin: 0 10px;
 }
 
 .footer-icon:hover {
@@ -52,6 +51,29 @@
 
 #binIcon {
   display: none;
+}
+
+.footer-container a {
+  color: inherit;
+  text-decoration: none;
+  padding: none;
+  text-align: center;
+  line-height: 0;
+}
+
+@media (min-width: 400px) {
+  .footer-field {
+    width: 335;
+  }
+}
+
+
+@media (min-width: 850px) {
+  .footer-container {
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+  }
 }
 
 @media (min-width: 980px) {

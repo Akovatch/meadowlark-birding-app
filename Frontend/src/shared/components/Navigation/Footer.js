@@ -19,16 +19,24 @@ export default function Footer() {
           <h3>Meadowlark Bird Sighting Database</h3>
           <div className="footer-icons">
             <div className="footer-icon">
-              <MdOutlineContactSupport size={30} />
+              <a href="mailto:Anthonykovatch@gmail.com">
+                <MdOutlineContactSupport size={30} />
+              </a>
               <p>Support</p>
+            </div>
+            <div className="footer-icon">
+              <a
+                href="https://github.com/Akovatch/meadowlark-birding-app"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <FaLaptopCode size={30} />
+              </a>
+              <p>Source Code</p>
             </div>
             <div className="footer-icon">
               <FaYoutube size={30} />
               <p>Demo</p>
-            </div>
-            <div className="footer-icon">
-              <FaLaptopCode size={30} />
-              <p>Source Code</p>
             </div>
           </div>
         </div>
@@ -42,11 +50,23 @@ export default function Footer() {
               <p>LinkedIn</p>
             </div>
             <div className="footer-icon">
-              <FaGithub size={30} />
+              <a
+                href="https://github.com/Akovatch"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <FaGithub size={30} />
+              </a>
               <p>GitHub</p>
             </div>
             <div className="footer-icon">
-              <MdEmail size={30} />
+              <a
+                href="mailto:Anthonykovatch@gmail.com"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <MdEmail size={30} />
+              </a>
               <p>Contact</p>
             </div>
           </div>

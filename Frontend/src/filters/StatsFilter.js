@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React from "react";
 import Select from "react-select";
 import DatePicker from "react-datepicker";
 import { MdInfoOutline } from "react-icons/md";
@@ -88,7 +88,7 @@ export default function StatsFilter(props) {
                 selectsStart
                 startDate={props.startDate}
                 endDate={props.endDate}
-                placeholderText="Start Date"
+                placeholderText="Start"
               />
             </div>
             <p> - </p>
@@ -101,18 +101,13 @@ export default function StatsFilter(props) {
                 startDate={props.startDate}
                 endDate={props.endDate}
                 minDate={props.startDate}
-                placeholderText="End Date"
+                placeholderText="End"
               />
             </div>
           </div>
         </div>
         <div className="stats-field-group" id="unique-field">
-          <div
-            className="stats-unique-label-container tooltip"
-            // onMouseEnter={() => setShowTooltip(true)}
-            // onMouseLeave={() => setShowTooltip(false)}
-          >
-            {/* {showTooltip && <div className="tooltiptext">Tooltip!</div>} */}
+          <div className="stats-unique-label-container tooltip">
             <div className="tooltiptext">
               Removes duplicate sightings of the same species
             </div>
