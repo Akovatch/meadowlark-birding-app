@@ -1,11 +1,6 @@
 import React from "react";
-import {
-  BrowserRouter as Router,
-  Route,
-  Redirect,
-  Routes,
-} from "react-router-dom";
-import { Bounce, ToastContainer } from "react-toastify";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import { ToastContainer } from "react-toastify";
 
 import Landing from "./landing/Landing";
 import AllLocations from "./locations/pages/AllLocations";

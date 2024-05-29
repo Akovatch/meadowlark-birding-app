@@ -20,36 +20,56 @@ export default function Landing() {
         </div>
       </div>
       <div className="landing-info-container-purple">
-        <img className="landing-info-image-purple" src={community} />
+        <img
+          className="landing-info-image-purple"
+          src={community}
+          alt="Screenshot of Community Sightings page"
+        />
         <h3 className="landing-info-description-purple">
           Filter our database of Community Sightings to locate specific species
           in your area
         </h3>
       </div>
       <div className="landing-info-container-grey">
-        <img className="landing-info-image-grey" src={viewlocation} />
+        <img
+          className="landing-info-image-grey"
+          src={viewlocation}
+          alt="Screenshot of View Location page"
+        />
 
         <h3 className="landing-info-description-grey">
-          Select a location pin to view, add, edit, and delete sightings from a
-          birding hot spot
+          Select a location pin to view, add, edit, and delete the sightings of
+          a birding hot spot
         </h3>
       </div>{" "}
       <div className="landing-info-container-purple">
-        <img className="landing-info-image-purple" src={mysightings} />
+        <img
+          className="landing-info-image-purple"
+          src={mysightings}
+          alt="Screenshot of My Sightings page"
+        />
         <h3 className="landing-info-description-purple">
-          View and filter your own sightings, organized by location, on the My
+          View and filter your sightings, organized by location, on the My
           Sightings map
         </h3>
       </div>
       <div className="landing-info-container-grey">
-        <img className="landing-info-image-grey" src={addlocation} />
+        <img
+          className="landing-info-image-grey"
+          src={addlocation}
+          alt="Screenshot of Add Location page"
+        />
         <h3 className="landing-info-description-grey">
           Add new birding hot spots to the database using the Add Location
           feature
         </h3>
       </div>
       <div className="landing-info-container-purple">
-        <img className="landing-info-image-purple" src={mystats} />
+        <img
+          className="landing-info-image-purple"
+          src={mystats}
+          alt="Screenshot of My Stats page"
+        />
         <h3 className="landing-info-description-purple">
           Search, organize, and analyze your sighting data using the My Stats
           page.

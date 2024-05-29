@@ -10,8 +10,6 @@ import "./StatsFilter.css";
 import "react-datepicker/dist/react-datepicker.css";
 
 export default function StatsFilter(props) {
-  // const [showTooltip, setShowTooltip] = useState(false);
-
   function generateYearOptions() {
     let yearOptions = [];
     let startingYear = 2023;
@@ -109,7 +107,7 @@ export default function StatsFilter(props) {
         <div className="stats-field-group" id="unique-field">
           <div className="stats-unique-label-container tooltip">
             <div className="tooltiptext">
-              Removes duplicate sightings of the same species
+              Filters duplicate sightings of the same species
             </div>
             <h3 className="stats-unique-label">Unique</h3>
             <MdInfoOutline

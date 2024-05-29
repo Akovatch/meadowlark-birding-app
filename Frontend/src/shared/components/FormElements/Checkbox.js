@@ -9,6 +9,7 @@ export default function Checkbox(props) {
           type="checkbox"
           name={props.option}
           checked={props.checked}
+          style={{ cursor: "pointer" }}
           onChange={() => props.handleChange(props.checked, props.option)}
         />
       </label>

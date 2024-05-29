@@ -12,7 +12,6 @@ import { AuthContext } from "../../shared/context/auth-context";
 import { useHttpClient } from "../../shared/hooks/http-hook";
 
 import Card from "../../shared/components/UIElements/Card";
-import { Redirect } from "react-router-dom";
 import "./SightingsTable.css";
 
 export default function SightingsTable(props) {
@@ -125,20 +124,6 @@ export default function SightingsTable(props) {
       sortable: false,
     },
   ];
-
-  // function getAudubonLink(species) {
-  //   // ex. Bicknell's Thrush => bicknells-thrush
-  //   const path = species.toLowerCase().replace("'", "").split(" ").join("-");
-  //   return (
-  //     <a
-  //       href={"https://www.audubon.org/field-guide/bird/" + path}
-  //       target="_blank"
-  //       rel="noopener noreferrer"
-  //     >
-  //       {species}
-  //     </a>
-  //   );
-  // }
 
   function generateTableData() {
     return props.sightings.map((sighting) => {

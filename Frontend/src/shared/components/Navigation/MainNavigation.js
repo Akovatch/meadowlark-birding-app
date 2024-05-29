@@ -44,7 +44,12 @@ export default function MainNavigation(props) {
           <span />
           <span />
         </button>
-        <Link to="/">
+        <Link
+          to="/"
+          style={{
+            textDecoration: "none",
+          }}
+        >
           <div className="main-navigation-logo-container">
             <FaBinoculars color="white" size={50} style={{ margin: "5px" }} />
             <h1 className="main-navigation__title">eadowlark</h1>

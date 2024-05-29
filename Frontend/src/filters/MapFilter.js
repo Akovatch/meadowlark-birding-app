@@ -188,7 +188,10 @@ export default function MapFilter(props) {
     <>
       {!props.windowWide && (
         <div className="filter-close-button-row">
-          <button onClick={() => togglePanelOpen()}>
+          <button
+            onClick={() => togglePanelOpen()}
+            style={{ cursor: "pointer" }}
+          >
             Filters {props.panelOpen ? <FcCollapse /> : <FcExpand />}
           </button>
         </div>

@@ -23,6 +23,10 @@
   top: 130px;
 }
 
+.translucent-box h2 {
+  color: black;
+}
+
 .landing-info-container-grey {
   background-color: lightgray;
   padding: 20px;

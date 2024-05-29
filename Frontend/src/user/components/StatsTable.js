@@ -83,20 +83,6 @@ export default function StatsTable(props) {
     },
   ];
 
-  // function getAudubonLink(species) {
-  //   // ex. Bicknell's Thrush => bicknells-thrush
-  //   const path = species.toLowerCase().replace("'", "").split(" ").join("-");
-  //   return (
-  //     <a
-  //       href={"https://www.audubon.org/field-guide/bird/" + path}
-  //       target="_blank"
-  //       rel="noopener noreferrer"
-  //     >
-  //       {species}
-  //     </a>
-  //   );
-  // }
-
   const sightingsData = props.sightings.map((sighting, index) => {
     let date = new Date(sighting.date);
     return {

@@ -1,4 +1,6 @@
 import React from "react";
+import { useLocation } from "react-router-dom";
+
 import { MdOutlineContactSupport } from "react-icons/md";
 import { FaYoutube } from "react-icons/fa";
 import { FaLaptopCode } from "react-icons/fa6";
@@ -10,9 +12,11 @@ import { FaBinoculars } from "react-icons/fa";
 import "./Footer.css";
 
 export default function Footer() {
+  let location = useLocation();
+
   return (
     <>
-      <div className="footer-break"></div>
+      {location.pathname !== "/" && <div className="footer-break"></div>}
       <div className="footer-banner"></div>
       <footer className="footer-container">
         <div className="footer-field">
@@ -34,7 +38,8 @@ export default function Footer() {
               </a>
               <p>Source Code</p>
             </div>
-            <div className="footer-icon">
+            <div className="footer-icon tooltip">
+              <div className="tooltiptext">Coming soon!</div>
               <FaYoutube size={30} />
               <p>Demo</p>
             </div>
@@ -46,7 +51,13 @@ export default function Footer() {
           <h3>Created by Tony Kovatch</h3>
           <div className="footer-icons">
             <div className="footer-icon">
-              <FaLinkedin size={30} />
+              <a
+                href="https://www.linkedin.com/in/anthony-kovatch-45b674310/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <FaLinkedin size={30} />
+              </a>
               <p>LinkedIn</p>
             </div>
             <div className="footer-icon">
