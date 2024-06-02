@@ -51,7 +51,7 @@ export default function NewSighting(props) {
       };
 
       let responseData = await sendRequest(
-        "http://localhost:5000/api/sightings",
+        process.env.REACT_APP_BACKEND_URL + "/sightings",
         "POST",
         JSON.stringify(newSighting),
         {

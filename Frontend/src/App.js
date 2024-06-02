@@ -1,18 +1,12 @@
-import React from "react";
+import React, { Suspense } from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import { ToastContainer } from "react-toastify";
 
 import Landing from "./landing/Landing";
-import AllLocations from "./locations/pages/AllLocations";
-import NewLocation from "./locations/pages/NewLocation";
-import UserLocations from "./locations/pages/UserLocations";
-import UserStats from "./user/pages/UserStats";
 import MainNavigation from "./shared/components/Navigation/MainNavigation";
-import ViewLocation from "./locations/pages/ViewLocation";
-import Auth from "./user/pages/Auth";
 import FilterPanel from "./shared/components/UIElements/FilterPanel";
 import Footer from "./shared/components/Navigation/Footer";
-import NotFound from "./shared/components/Navigation/NotFound";
+import LoadingSpinner from "./shared/components/UIElements/LoadingSpinner";
 import { AuthContext } from "./shared/context/auth-context";
 import { useAuth } from "./shared/hooks/auth-hook";
 import { FilterContext } from "./shared/context/filter-context";
@@ -20,6 +14,18 @@ import { useFilters } from "./shared/hooks/filters-hook";
 
 import "react-toastify/dist/ReactToastify.css";
 import "./App.css";
+
+const AllLocations = React.lazy(() => import("./locations/pages/AllLocations"));
+const NewLocation = React.lazy(() => import("./locations/pages/NewLocation"));
+const UserLocations = React.lazy(() =>
+  import("./locations/pages/UserLocations")
+);
+const UserStats = React.lazy(() => import("./user/pages/UserStats"));
+const ViewLocation = React.lazy(() => import("./locations/pages/ViewLocation"));
+const Auth = React.lazy(() => import("./user/pages/Auth"));
+const NotFound = React.lazy(() =>
+  import("./shared/components/Navigation/NotFound")
+);
 
 function App() {
   const { token, login, logout, userId } = useAuth();
@@ -33,8 +39,6 @@ function App() {
   } = useFilters();
 
   let routes;
-
-  console.log(token);
 
   if (token) {
     routes = (
@@ -112,7 +116,9 @@ function App() {
         >
           <Router>
             <MainNavigation />
-            <main>{routes}</main>
+            <main>
+              <Suspense fallback={<LoadingSpinner />}>{routes}</Suspense>
+            </main>
             <Footer />
           </Router>
         </FilterContext.Provider>

@@ -38,8 +38,7 @@ export default function Footer() {
               </a>
               <p>Source Code</p>
             </div>
-            <div className="footer-icon tooltip">
-              <div className="tooltiptext">Coming soon!</div>
+            <div className="footer-icon">
               <FaYoutube size={30} />
               <p>Demo</p>
             </div>

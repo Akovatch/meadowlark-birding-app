@@ -38,7 +38,7 @@ export default function ViewLocation() {
     async function fetchLocation() {
       try {
         const responseData = await sendRequest(
-          `http://localhost:5000/api/locations/${locationId}`
+          `${process.env.REACT_APP_BACKEND_URL}/locations/${locationId}`
         );
         setLoadedLocation(responseData.location);
       } catch (err) {}
@@ -67,7 +67,7 @@ export default function ViewLocation() {
     setShowConfirmModal(false);
     try {
       await sendRequest(
-        `http://localhost:5000/api/locations/${loadedLocation.id}`,
+        `${process.env.REACT_APP_BACKEND_URL}/locations/${loadedLocation.id}`,
         "DELETE",
         null,
         {
@@ -143,7 +143,11 @@ export default function ViewLocation() {
         <div className="viewlocation-header-info">
           <h2 className="viewlocation-header-title">{loadedLocation.title}</h2>
           {auth.userId !== loadedLocation.creator.id && (
-            <p className="viewlocation-creator">{`Creator: ${loadedLocation.creator.name}`}</p>
+            <p className="viewlocation-creator">{`Creator: ${
+              loadedLocation.creator.name.startsWith("guest-user--")
+                ? "Guest"
+                : loadedLocation.creator.name
+            }`}</p>
           )}
         </div>
         <div className="viewlocation-header">
@@ -174,7 +178,7 @@ export default function ViewLocation() {
             initialViewState={{
               longitude: loadedLocation.coordinates.lng,
               latitude: loadedLocation.coordinates.lat,
-              zoom: 12,
+              zoom: 10,
             }}
             style={{ height: 200 }}
             mapStyle="mapbox://styles/mapbox/streets-v12?optimize=true"

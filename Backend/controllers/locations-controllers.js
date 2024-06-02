@@ -4,7 +4,6 @@ const { validationResult } = require("express-validator");
 const mongoose = require("mongoose");
 
 const HttpError = require("../models/http-error");
-// const getCoordsForAddress = require("../util/location");
 const Sighting = require("../models/sightings");
 const Location = require("../models/locations");
 const User = require("../models/user");
@@ -94,15 +93,6 @@ async function createLocation(req, res, next) {
     );
   }
   const { title, coordinates, sightings } = req.body;
-
-  // This will be redone later when map functionality is done - the map api should give us the coordinates based on a click
-  // and will likely be sent in the form that comes from the front end
-  // let coordinates;
-  // try {
-  //   coordinates = await getCoordsForAddress(address);
-  // } catch (error) {
-  //   return next(error);
-  // }
 
   const createdLocation = new Location({
     title,
@@ -224,7 +214,7 @@ async function deleteLocation(req, res, next) {
     const sess = await mongoose.startSession();
     sess.startTransaction();
     await location.deleteOne({ session: sess });
-    location.creator.locations.pull(location); // THIS IS WHERE WE DELETE FROM USER - IT ISN'T WORKING...
+    location.creator.locations.pull(location); 
     await location.creator.save({ session: sess });
     await Sighting.deleteMany({ location: locationId }); // THIS LINE GIVES US "ON DELETE CASCADE" FUNCTIONALITY
     await sess.commitTransaction();

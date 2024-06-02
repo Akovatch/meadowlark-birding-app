@@ -5,20 +5,6 @@ import NewLocationMap from "../../../maps/NewLocationMap";
 import "react-datepicker/dist/react-datepicker.css";
 import "./Input.css";
 
-// function coordinatesValid() {
-//   // maxBounds: [
-//   //   [-171.0, 73.0],
-//   //   [-40.0, 12.0],
-//   // ],
-
-//   return (
-//     inputState.value.lng > -171.0 &&
-//     inputState.value.lng < -40.0 &&
-//     inputState.value.lat < 73.0 &&
-//     inputState.value.lat > 12.0
-//   );
-// }
-
 function inputReducer(state, action) {
   switch (action.type) {
     case "CHANGE":

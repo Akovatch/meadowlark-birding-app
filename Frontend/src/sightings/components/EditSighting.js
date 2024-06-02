@@ -36,7 +36,7 @@ export default function EditSighting(props) {
     event.preventDefault();
     try {
       let response = await sendRequest(
-        `http://localhost:5000/api/sightings/${props.id}`,
+        `${process.env.REACT_APP_BACKEND_URL}/sightings/${props.id}`,
         "PATCH",
         JSON.stringify({
           species: formState.inputs.species.value,

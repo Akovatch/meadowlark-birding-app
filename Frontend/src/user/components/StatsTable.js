@@ -100,7 +100,7 @@ export default function StatsTable(props) {
 
   const handleRowSelected = useCallback(
     (state) => {
-      console.log(state.selectedRows);
+      // console.log(state.selectedRows);
 
       if (state.selectedRows.length > 0) {
         let selectedRow = props.sightings.find(

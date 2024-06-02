@@ -24,7 +24,7 @@ export default function LocationsDisplayMap(props) {
     JSON.parse(localStorage.getItem("coordinates")) || {
       longitude: -73.990593,
       latitude: 40.740121,
-      zoom: 8.0,
+      zoom: 6.0,
     }
   );
 
@@ -36,7 +36,7 @@ export default function LocationsDisplayMap(props) {
         ...viewState,
         latitude: pos.coords.latitude,
         longitude: pos.coords.longitude,
-        zoom: 8.0,
+        zoom: 6.0,
       });
     });
 
@@ -45,7 +45,7 @@ export default function LocationsDisplayMap(props) {
       JSON.stringify({
         latitude: viewState.latitude,
         longitude: viewState.longitude,
-        zoom: 8.0,
+        zoom: 6.0,
       })
     );
   }, []);

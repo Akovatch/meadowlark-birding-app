@@ -55,7 +55,7 @@ export default function SightingsTable(props) {
     setShowConfirmModal(false);
     try {
       await sendRequest(
-        `http://localhost:5000/api/sightings/${selectedSighting.id}`,
+        process.env.REACT_APP_BACKEND_URL + `/sightings/${selectedSighting.id}`,
         "DELETE",
         null,
         {

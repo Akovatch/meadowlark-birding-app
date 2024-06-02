@@ -27,7 +27,7 @@ export default function MainNavigation(props) {
       {drawerIsOpen && <Backdrop onClick={closeDrawerHandler} />}
       <SideDrawer show={drawerIsOpen} onClick={closeDrawerHandler}>
         <nav className="main-navigation__drawer-nav">
-          <NavLinks />
+          <NavLinks closeDrawerHandler={closeDrawerHandler} />
         </nav>
       </SideDrawer>
 

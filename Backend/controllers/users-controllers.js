@@ -1,9 +1,12 @@
 const { validationResult } = require("express-validator");
 const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
+const mongoose = require("mongoose");
 
 const HttpError = require("../models/http-error");
 const User = require("../models/user");
+const Sighting = require("../models/sightings");
+const Location = require("../models/locations");
 
 async function getUsers(req, res, next) {
   let users;
@@ -75,12 +78,28 @@ async function signup(req, res, next) {
   try {
     token = jwt.sign(
       { userId: createdUser.id, email: createdUser.email },
-      "supersecret_dont_share",
+      process.env.JWT_KEY,
       { expiresIn: "1h" }
     );
   } catch (err) {
     const error = new HttpError("Signing up failed, please try again.", 500);
     return next(error);
+  }
+
+  // setting a timeout for and users with 'guest-user--' at the beginning
+  if (name.startsWith("guest-user--")) {
+    setTimeout(() => {
+      async function deleteGuestUser() {
+        const sess = await mongoose.startSession();
+        sess.startTransaction();
+        await User.deleteOne({ name: name });
+        await Location.deleteMany({ creator: createdUser.id });
+        await Sighting.deleteMany({ creator: createdUser.id });
+        await sess.commitTransaction();
+      }
+
+      deleteGuestUser();
+    }, 1000 * 60 * 60);
   }
 
   res
@@ -135,7 +154,7 @@ async function login(req, res, next) {
   try {
     token = jwt.sign(
       { userId: existingUser.id, email: existingUser.email },
-      "supersecret_dont_share",
+      process.env.JWT_KEY,
       { expiresIn: "1h" }
     );
   } catch (err) {

@@ -42,7 +42,7 @@ export default function NewLocation() {
 
     try {
       let responseData = await sendRequest(
-        "http://localhost:5000/api/locations",
+        process.env.REACT_APP_BACKEND_URL + "/locations",
         "POST",
         JSON.stringify({
           title: formState.inputs.title.value,

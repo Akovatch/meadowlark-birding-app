@@ -1,0 +1,8 @@
+{
+  "env": {
+    "DB_USER": "Akovatch",
+    "DB_PASSWORD": "NNVCFTDd6F4lGBc8",
+    "DB_NAME": "mern",
+    "JWT_KEY": "secret_key_do_not_share"
+  }
+}

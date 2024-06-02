@@ -27,7 +27,7 @@ export default function UpdateLocation(props) {
     event.preventDefault();
     try {
       const response = await sendRequest(
-        `http://localhost:5000/api/locations/${props.locationId}`,
+        `${process.env.REACT_APP_BACKEND_URL}/locations/${props.locationId}`,
         "PATCH",
         JSON.stringify({
           title: formState.inputs.title.value,

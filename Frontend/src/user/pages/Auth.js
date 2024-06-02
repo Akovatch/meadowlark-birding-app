@@ -68,7 +68,7 @@ export default function Auth() {
     if (isLoginMode) {
       try {
         const responseData = await sendRequest(
-          "http://localhost:5000/api/users/login",
+          process.env.REACT_APP_BACKEND_URL + "/users/login",
           "POST",
           JSON.stringify({
             email: formState.inputs.email.value,
@@ -85,7 +85,7 @@ export default function Auth() {
     } else {
       try {
         const responseData = await sendRequest(
-          "http://localhost:5000/api/users/signup",
+          process.env.REACT_APP_BACKEND_URL + "/users/signup",
           "POST",
           JSON.stringify({
             name: formState.inputs.name.value,
@@ -108,7 +108,7 @@ export default function Auth() {
       <ErrorModal error={error} onClear={clearError} />
       <Card className="authentication">
         {isLoading && <LoadingSpinner asOverlay />}
-        <h2>Login Required</h2>
+        <h2>{isLoginMode ? "Login" : "Sign Up"}</h2>
         <hr />
         <form>
           {!isLoginMode && (
@@ -145,11 +145,11 @@ export default function Auth() {
             onClick={authSubmitHandler}
             disabled={!formState.isValid}
           >
-            {isLoginMode ? "LOGIN" : "SIGNUP"}
+            {isLoginMode ? "LOGIN" : "SIGN UP"}
           </Button>
         </form>
         <Button inverse onClick={switchModeHandler}>
-          SWITCH TO {isLoginMode ? "SIGNUP" : "LOGIN"}
+          SWITCH TO {isLoginMode ? "SIGN UP" : "LOGIN"}
         </Button>
       </Card>
     </>

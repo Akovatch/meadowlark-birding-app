@@ -4,11 +4,9 @@ const { validationResult } = require("express-validator");
 const mongoose = require("mongoose");
 
 const HttpError = require("../models/http-error");
-// const getCoordsForAddress = require("../util/location");
 
 const Sighting = require("../models/sightings");
 const Location = require("../models/locations");
-// const User = require("../models/user");
 
 // only used when a sighting is edited
 async function getSightingById(req, res, next) {

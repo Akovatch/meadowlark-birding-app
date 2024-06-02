@@ -1,4 +1,6 @@
-const API_KEY = "fakeApiKey";
+// dummy data for testing
+
+const API_KEY = "insertApiKey";
 
 async function getCoordsForAddress(address) {
   return {

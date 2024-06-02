@@ -17,7 +17,7 @@ export default function AllLocations() {
     async function fetchLocations() {
       try {
         const responseData = await sendRequest(
-          `http://localhost:5000/api/locations`
+          process.env.REACT_APP_BACKEND_URL + "/locations"
         );
         setLoadedLocations(responseData.locations);
       } catch (err) {}

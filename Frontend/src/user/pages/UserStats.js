@@ -28,7 +28,7 @@ export default function UserStats() {
     async function fetchSightings() {
       try {
         const responseData = await sendRequest(
-          `http://localhost:5000/api/sightings/user/${userId}`
+          `${process.env.REACT_APP_BACKEND_URL}/sightings/user/${userId}`
         );
         setLoadedSightings(responseData.sightings);
       } catch (err) {}

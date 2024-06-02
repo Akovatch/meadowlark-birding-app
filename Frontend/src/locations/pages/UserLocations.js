@@ -20,7 +20,7 @@ export default function UserLocations() {
     async function fetchLocations() {
       try {
         const responseData = await sendRequest(
-          `http://localhost:5000/api/locations/user/${userId}`
+          `${process.env.REACT_APP_BACKEND_URL}/locations/user/${userId}`
         );
         setLoadedLocations(responseData.locations);
       } catch (err) {}
