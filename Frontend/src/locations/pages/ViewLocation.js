@@ -5,6 +5,7 @@ import { NavigationControl } from "react-map-gl";
 import { BiEditAlt } from "react-icons/bi";
 import { RiDeleteBinLine } from "react-icons/ri";
 import { IoMdReturnLeft } from "react-icons/io";
+import { FaMapMarkerAlt } from "react-icons/fa";
 import { toast } from "react-toastify";
 
 import Card from "../../shared/components/UIElements/Card";
@@ -17,8 +18,6 @@ import { AuthContext } from "../../shared/context/auth-context";
 import UpdateLocation from "../components/UpdateLocation";
 import LocationSightings from "../../sightings/components/LocationSightings";
 import FiltersNotification from "../../filters/FiltersNotification";
-import redPin from "../../images/pin-red.png";
-import yellowPin from "../../images/pin-yellow.png";
 
 import "./ViewLocation.css";
 
@@ -190,12 +189,14 @@ export default function ViewLocation() {
               latitude={loadedLocation.coordinates.lat}
               anchor="bottom"
             >
-              <img
-                src={
-                  loadedLocation.creator.id === auth.userId ? yellowPin : redPin
-                }
-                alt="location pin"
-                style={{ width: 20 }}
+              <FaMapMarkerAlt
+                size="30"
+                style={{
+                  color:
+                    loadedLocation.creator.id === auth.userId
+                      ? "#FB5E10"
+                      : "#8D48FB",
+                }}
               />
             </Marker>
           </Map>

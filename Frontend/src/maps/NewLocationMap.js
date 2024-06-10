@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
 import Map, { Marker, NavigationControl, GeolocateControl } from "react-map-gl";
 import GeocoderControl from "./GeocoderControl";
+import { FaMapMarkerAlt } from "react-icons/fa";
+
 import "./GeocoderControl.css";
 
 export default function NewLocationMap(props) {
@@ -56,7 +58,7 @@ export default function NewLocationMap(props) {
       cursor="crosshair"
       onClick={handleClick}
       mapStyle="mapbox://styles/mapbox/streets-v12?optimize=true"
-      scrollZoom={false}
+      scrollZoom={true}
     >
       <GeocoderControl
         mapboxAccessToken={process.env.REACT_APP_MAPBOX_KEY}
@@ -70,7 +72,14 @@ export default function NewLocationMap(props) {
           latitude={markerCoordinates.lat}
           anchor="bottom"
           draggable
-        ></Marker>
+        >
+          <FaMapMarkerAlt
+            size="30"
+            style={{
+              color: "#FB5E10",
+            }}
+          />
+        </Marker>
       )}
     </Map>
   );

@@ -111,7 +111,7 @@
   .landing-info-image-purple {
     order: 0;
     width: 40%;
-    border-radius: 20px;
+    border-radius: 5px;
     margin: 50px;
     overflow: hidden;
   }
@@ -119,7 +119,7 @@
   .landing-info-image-grey {
     order: 1;
     width: 40%;
-    border-radius: 20px;
+    border-radius: 5px;
     margin: 50px;
     overflow: hidden;
   }

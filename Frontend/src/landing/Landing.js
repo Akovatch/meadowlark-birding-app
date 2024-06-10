@@ -49,7 +49,7 @@ export default function Landing() {
           alt="Screenshot of My Sightings page"
         />
         <h3 className="landing-info-description-purple">
-          View and filter your sightings, organized by location, on the My
+          View and filter your own sightings, organized by location, on the My
           Sightings map
         </h3>
       </div>

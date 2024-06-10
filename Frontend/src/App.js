@@ -94,7 +94,7 @@ function App() {
           }
         />
         <Route path="auth" element={<Auth />} />
-        <Route path="*" element={<Auth />} />
+        <Route path="*" element={<NotFound />} />
       </Routes>
     );
   }

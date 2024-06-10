@@ -2,7 +2,7 @@ import React, { useEffect, useState, useContext } from "react";
 
 import ErrorModal from "../../shared/components/UIElements/ErrorModal";
 import LoadingSpinner from "../../shared/components/UIElements/LoadingSpinner";
-import LocationsDisplayMap from "../../maps/LocationsDisplayMap";
+import ClusterDisplayMap from "../../maps/ClusterDisplayMap";
 import { useHttpClient } from "../../shared/hooks/http-hook";
 import { FilterContext } from "../../shared/context/filter-context";
 import { filterLocations } from "../../shared/util/filterHelpers";
@@ -30,13 +30,14 @@ export default function AllLocations() {
       <ErrorModal error={error} onClear={clearError} />
       {isLoading && <LoadingSpinner />}
       {!isLoading && loadedLocations && (
-        <LocationsDisplayMap
+        <ClusterDisplayMap
           locations={filterLocations(
             loadedLocations,
             speciesFilter,
             yearFilter,
             monthsFilter
           )}
+          community
         />
       )}
     </>

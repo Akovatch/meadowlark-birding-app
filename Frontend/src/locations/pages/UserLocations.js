@@ -3,7 +3,8 @@ import { useParams } from "react-router-dom";
 
 import ErrorModal from "../../shared/components/UIElements/ErrorModal";
 import LoadingSpinner from "../../shared/components/UIElements/LoadingSpinner";
-import LocationsDisplayMap from "../../maps/LocationsDisplayMap";
+// import PopupDisplayMap from "../../maps/PopupDisplayMap";
+import ClusterDisplayMap from "../../maps/ClusterDisplayMap";
 import { FilterContext } from "../../shared/context/filter-context";
 import { useHttpClient } from "../../shared/hooks/http-hook";
 import { filterLocations } from "../../shared/util/filterHelpers";
@@ -37,7 +38,7 @@ export default function UserLocations() {
         </div>
       )}
       {!isLoading && loadedLocations && (
-        <LocationsDisplayMap
+        <ClusterDisplayMap
           locations={filterLocations(
             loadedLocations,
             speciesFilter,
