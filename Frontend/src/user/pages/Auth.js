@@ -80,7 +80,7 @@ export default function Auth() {
         );
 
         auth.login(responseData.userId, responseData.token);
-        navigate(-1);
+        navigate("/locations");
       } catch (err) {}
     } else {
       try {
@@ -98,7 +98,7 @@ export default function Auth() {
         );
 
         auth.login(responseData.userId, responseData.token);
-        navigate(-1);
+        navigate("/locations");
       } catch (err) {}
     }
   }

@@ -75,9 +75,6 @@ export default function LocationsDisplayMap(props) {
     options: { radius: 75, maxZoom: 20 },
   });
 
-  console.log(points);
-  console.log(clusters);
-
   const flyIntoCluster = useCallback((longitude, latitude, zoom) => {
     mapRef.flyTo({
       center: [longitude, latitude],

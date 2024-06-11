@@ -37,7 +37,7 @@ export default function NavLinks(props) {
 
       auth.login(responseData.userId, responseData.token);
       setShowGuestModal(false);
-      props.closeDrawerHandler();
+      props.closeDrawer();
       navigate("/locations");
     } catch (err) {}
   }

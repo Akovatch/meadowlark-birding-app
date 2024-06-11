@@ -9,7 +9,7 @@ import Backdrop from "../UIElements/Backdrop";
 
 import "./MainNavigation.css";
 
-export default function MainNavigation(props) {
+export default function MainNavigation() {
   const [drawerIsOpen, setDrawerIsOpen] = useState(false);
 
   const location = useLocation();
@@ -27,7 +27,7 @@ export default function MainNavigation(props) {
       {drawerIsOpen && <Backdrop onClick={closeDrawerHandler} />}
       <SideDrawer show={drawerIsOpen} onClick={closeDrawerHandler}>
         <nav className="main-navigation__drawer-nav">
-          <NavLinks closeDrawerHandler={closeDrawerHandler} />
+          <NavLinks closeDrawer={closeDrawerHandler} />
         </nav>
       </SideDrawer>
 
@@ -56,7 +56,7 @@ export default function MainNavigation(props) {
           </div>
         </Link>
         <nav className="main-navigation__header-nav">
-          <NavLinks />
+          <NavLinks closeDrawer={closeDrawerHandler} />
         </nav>
       </MainHeader>
     </>
