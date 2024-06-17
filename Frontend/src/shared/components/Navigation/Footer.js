@@ -39,7 +39,13 @@ export default function Footer() {
               <p>Source Code</p>
             </div>
             <div className="footer-icon">
-              <FaYoutube size={30} />
+              <a
+                href="https://www.youtube.com/watch?v=429vVZc4nS0"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <FaYoutube size={30} />
+              </a>
               <p>Demo</p>
             </div>
           </div>

@@ -1,4 +1,5 @@
 import React from "react";
+import YoutubeEmbed from "../shared/components/UIElements/YoutubeEmbed";
 
 import community from "../images/community.png";
 import viewlocation from "../images/view-location.png";
@@ -18,6 +19,14 @@ export default function Landing() {
             bird sightings
           </h2>
         </div>
+      </div>
+      <div className="landing-info-container-grey">
+        <div className="video-container">
+          <YoutubeEmbed embedId="429vVZc4nS0" />
+        </div>
+        <h3 className="landing-info-description-grey">
+          Watch a demo video to discover the many features of Meadowlark
+        </h3>
       </div>
       <div className="landing-info-container-purple">
         <img

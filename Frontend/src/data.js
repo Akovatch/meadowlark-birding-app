@@ -2087,6 +2087,1175 @@ const data = [
     value: "fieldfare",
     label: "Fieldfare",
   },
+
+  {
+    value: "bar-headed goose",
+    label: "Bar-headed Goose",
+  },
+  {
+    value: "emperor goose",
+    label: "Emperor Goose",
+  },
+  {
+    value: "tundra bean-goose",
+    label: "Tundra Bean-goose",
+  },
+  {
+    value: "brandt",
+    label: "Brandt",
+  },
+  {
+    value: "ruddy shelduck",
+    label: "Ruddy Shelduck",
+  },
+  {
+    value: "baikal teal",
+    label: "Baikal Teal",
+  },
+  {
+    value: "falcated duck",
+    label: "Falcated Duck",
+  },
+  {
+    value: "eastern spot-billed duck",
+    label: "Eastern Spot-billed duck",
+  },
+  {
+    value: "mexican duck",
+    label: "Mexican Duck",
+  },
+  {
+    value: "green-winged teal",
+    label: "Green-winged Teal",
+  },
+  {
+    value: "common pochard",
+    label: "Common Pochard",
+  },
+  {
+    value: "steller's eider",
+    label: "Steller's Eider",
+  },
+  {
+    value: "white-winged scoter",
+    label: "White-winged Scoter",
+  },
+  {
+    value: "stejneger's scoter",
+    label: "Stejneger's Scoter",
+  },
+  {
+    value: "common scoter",
+    label: "Common Scoter",
+  },
+  {
+    value: "common merganser",
+    label: "Common Merganser",
+  },
+  {
+    value: "masked duck",
+    label: "Masked Duck",
+  },
+  {
+    value: "plain chachalaca",
+    label: "Plain Chachalaca",
+  },
+  {
+    value: "mountain quail",
+    label: "Mountain Quail",
+  },
+  {
+    value: "california quail",
+    label: "California Quail",
+  },
+  {
+    value: "gambel's quail",
+    label: "Gambel's Quail",
+  },
+  {
+    value: "white-tailed ptarmigan",
+    label: "White-tailed Ptarmigan",
+  },
+  {
+    value: "sooty grouse",
+    label: "Sooty Grouse",
+  },
+  {
+    value: "sharp-tailed grouse",
+    label: "Sharp-tailed Grouse",
+  },
+  {
+    value: "greater sage-grouse",
+    label: "Greater Sage-grouse",
+  },
+  {
+    value: "ring-necked pheasant",
+    label: "Ring-necked Pheasant",
+  },
+  {
+    value: "chukar",
+    label: "Chukar",
+  },
+  {
+    value: "least grebe",
+    label: "Least Grebe",
+  },
+  {
+    value: "horned grebe",
+    label: "Horned Grebe",
+  },
+  {
+    value: "eared grebe",
+    label: "Eared Grebe",
+  },
+  {
+    value: "rock pigeon",
+    label: "Rock Pigeon",
+  },
+  {
+    value: "common wood pigeon",
+    label: "Common Wood Pigeon",
+  },
+  {
+    value: "oriental turtle-dove",
+    label: "Oriental Turtle-dove",
+  },
+  {
+    value: "european turtle-dove",
+    label: "European Turtle-dove",
+  },
+  {
+    value: "spotted dove",
+    label: "Spotted Dove",
+  },
+  {
+    value: "white-tipped dove",
+    label: "White-tipped Dove",
+  },
+  {
+    value: "eared dove",
+    label: "Eared Dove",
+  },
+  {
+    value: "groove-billed ani",
+    label: "Groove-billed Ani",
+  },
+  {
+    value: "common cuckoo",
+    label: "Common Cuckoo",
+  },
+  {
+    value: "greater roadrunner",
+    label: "Greater Roadrunner",
+  },
+  {
+    value: "lesser nighthawk",
+    label: "Lesser Nighthawk",
+  },
+  {
+    value: "common poorwill",
+    label: "Common Poorwill",
+  },
+  {
+    value: "buff-collared nightjar",
+    label: "Buff-collared Nightjar",
+  },
+  {
+    value: "mexican whip-poor-will",
+    label: "Mexican Whip-poor-will",
+  },
+  {
+    value: "black swift",
+    label: "Black Swift",
+  },
+  {
+    value: "white-fronted swift",
+    label: "White-fronted Swift",
+  },
+  {
+    value: "white-collared swift",
+    label: "White-collated Swift",
+  },
+  {
+    value: "vaux's swift",
+    label: "Vaux's Swift",
+  },
+  {
+    value: "common swift",
+    label: "Common Swift",
+  },
+  {
+    value: "white-throated swift",
+    label: "White-throated Swift",
+  },
+  {
+    value: "mexican violetear",
+    label: "Mexican Violetear",
+  },
+  {
+    value: "rivoli's hummingbird",
+    label: "Rivoli's Hummingbird",
+  },
+  {
+    value: "blue-throated mountain gem",
+    label: "Blue-throated Mountain Gem",
+  },
+  {
+    value: "lucifer hummingbird",
+    label: "Lucifer Hummingbird",
+  },
+  {
+    value: "costa's hummingbird",
+    label: "Costa's Hummingbird",
+  },
+  {
+    value: "allen's hummingbird",
+    label: "Allen's Hummingbird",
+  },
+  {
+    value: "broad-tailed hummingbird",
+    label: "Broad-tailed Hummingbird",
+  },
+  {
+    value: "xantu's hummingbird",
+    label: "Xantu's Hummingbird",
+  },
+  {
+    value: "violet-crowned hummingbird",
+    label: "Violet-crowned Hummingbird",
+  },
+  {
+    value: "ridgeway's rail",
+    label: "Ridgeway's Rail",
+  },
+  {
+    value: "eurasian coot",
+    label: "Eurasian Coot",
+  },
+  {
+    value: "demoiselle crane",
+    label: "Demoiselle Crane",
+  },
+  {
+    value: "common crane",
+    label: "Common Crane",
+  },
+  {
+    value: "black-necked stilt",
+    label: "Black-necked Stilt",
+  },
+  {
+    value: "eurasian oystercatcher",
+    label: "Eurasian Oystercatcher",
+  },
+  {
+    value: "black oystercatcher",
+    label: "Black Oystercatcher",
+  },
+  {
+    value: "black-bellied plover",
+    label: "Black-bellied Plover",
+  },
+  {
+    value: "eurasian golden-plover",
+    label: "Eurasian Golden-plover",
+  },
+  {
+    value: "eurasian dotterel",
+    label: "Eurasian Dotterel",
+  },
+  {
+    value: "lesser sand-plover",
+    label: "Lesser Sand-plover",
+  },
+  {
+    value: "greater sand-plover",
+    label: "Greater Sand-plover",
+  },
+  {
+    value: "mountain plover",
+    label: "Mountain Plover",
+  },
+  {
+    value: "bristle-thighed curlew",
+    label: "Bristle-thighed Curlew",
+  },
+  {
+    value: "little curlew",
+    label: "Little Curlew",
+  },
+  {
+    value: "surfbird",
+    label: "Surfbird",
+  },
+  {
+    value: "long-toed stint",
+    label: "Long-toed Stint",
+  },
+  {
+    value: "rock sandpiper",
+    label: "Rock Sandpiper",
+  },
+  {
+    value: "baird's sandpiper",
+    label: "Baird's Sandpiper",
+  },
+  {
+    value: "jack snipe",
+    label: "Jack Snipe",
+  },
+  {
+    value: "common snipe",
+    label: "Common Snipe",
+  },
+  {
+    value: "terek sandpiper",
+    label: "Terek Sandpiper",
+  },
+  {
+    value: "gray-tailed tattler",
+    label: "Gray-tailed Tattler",
+  },
+  {
+    value: "wandering tattler",
+    label: "Wandering Tattler",
+  },
+  {
+    value: "marsh sandpiper",
+    label: "Marsh Sandpiper",
+  },
+  {
+    value: "red phalarope",
+    label: "Red Phalarope",
+  },
+  {
+    value: "oriental pratincole",
+    label: "Oriental Pratincole",
+  },
+  {
+    value: "common murre",
+    label: "Common Murre",
+  },
+  {
+    value: "thick-billed murre",
+    label: "Thick-billed Murre",
+  },
+  {
+    value: "pigeon guillemot",
+    label: "Pigeon Guillemot",
+  },
+  {
+    value: "marbled murrelet",
+    label: "Marbled Murrelet",
+  },
+  {
+    value: "kittilitz's murrelet",
+    label: "Kittilitz's Murrelet",
+  },
+  {
+    value: "scripp's murrelet",
+    label: "Scripp's Murrelet",
+  },
+  {
+    value: "guadalupe murrelet",
+    label: "Guadalupe Murrelet",
+  },
+  {
+    value: "craveri's murrelet",
+    label: "Craveri's Murrelet",
+  },
+  {
+    value: "cassin's auklet",
+    label: "Cassin's Auklet",
+  },
+  {
+    value: "parakeet auklet",
+    label: "Parakeet Auklet",
+  },
+  {
+    value: "least auklet",
+    label: "Least Auklet",
+  },
+  {
+    value: "crested auklet",
+    label: "Crested Auklet",
+  },
+  {
+    value: "rhinoceros auklet",
+    label: "Rhinoceros Auklet",
+  },
+  {
+    value: "horned puffin",
+    label: "Horned Puffin",
+  },
+  {
+    value: "tufted puffin",
+    label: "Tufted Puffin",
+  },
+  {
+    value: "swallow-tailed gull",
+    label: "Swallow-tailed Gull",
+  },
+  {
+    value: "red-legged kittiwake",
+    label: "Red-legged Kittiwake",
+  },
+  {
+    value: "belcher's gull",
+    label: "Belcher's Gull",
+  },
+  {
+    value: "short-billed gull",
+    label: "Short-billed Gull",
+  },
+  {
+    value: "yellow-footed gull",
+    label: "Yellow-footed Gull",
+  },
+  {
+    value: "yellow-legged gull",
+    label: "Yellow-legged Gull",
+  },
+  {
+    value: "kelp gull",
+    label: "Kelp Gull",
+  },
+  {
+    value: "red-tailed tropicbird",
+    label: "Red-tailed Tropicbird",
+  },
+  {
+    value: "red-throated loon",
+    label: "Red-throated Loon",
+  },
+  {
+    value: "arctic loon",
+    label: "Arctic Loon",
+  },
+  {
+    value: "common loon",
+    label: "Common Loon",
+  },
+  {
+    value: "yellow-billed loon",
+    label: "Yellow-billed Loon",
+  },
+  {
+    value: "white-capped albatross",
+    label: "White-capped Albatross",
+  },
+  {
+    value: "chatham albatross",
+    label: "Chatham Albatross",
+  },
+  {
+    value: "salvin's albatross",
+    label: "Salvin's Albatross",
+  },
+  {
+    value: "light-mantled albatross",
+    label: "Light-mantled Albatross",
+  },
+  {
+    value: "wandering albatross",
+    label: "Wandering Albatross",
+  },
+  {
+    value: "laysan albatross",
+    label: "Laysan Albatross",
+  },
+  {
+    value: "black-footed albatross",
+    label: "Black-footed Albatross",
+  },
+  {
+    value: "short-tailed albatross",
+    label: "Short-tailed Albatross",
+  },
+  {
+    value: "fork-tailed storm-petrel",
+    label: "Fork-tailed Storm-petrel",
+  },
+  {
+    value: "ringed storm-petrel",
+    label: "Ringed Storm-petrel",
+  },
+  {
+    value: "townsend's storm-petrel",
+    label: "Townsend's Storm-petrel",
+  },
+  {
+    value: "ashy storm-petrel",
+    label: "Ashy Storm-petrel",
+  },
+  {
+    value: "band-rumped storm-petrel",
+    label: "Band-rumped Storm-petrel",
+  },
+  {
+    value: "wedge-rumpled storm-petrel",
+    label: "Wedge-rumped Storm-petrel",
+  },
+  {
+    value: "black storm-petrel",
+    label: "Black Storm-petrel",
+  },
+  {
+    value: "tristam's storm-petrel",
+    label: "Tristam's Storm-petrel",
+  },
+  {
+    value: "least storm-petrel",
+    label: "Least Storm-petrel",
+  },
+  {
+    value: "gray-faced petrel",
+    label: "Gray-faced Petrel",
+  },
+  {
+    value: "providence petrel",
+    label: "Providence Petrel",
+  },
+  {
+    value: "kermadec petrel",
+    label: "Kermadec Petrel",
+  },
+  {
+    value: "murphy's petrel",
+    label: "Murphy's Petrel",
+  },
+  {
+    value: "hawaiian petrel",
+    label: "Hawaiian Petrel",
+  },
+  {
+    value: "white-necked petrel",
+    label: "White-necked Petrel",
+  },
+  {
+    value: "cook's petrel",
+    label: "Cook's petrel",
+  },
+  {
+    value: "stejneger's petrel",
+    label: "Stejneger's Petrel",
+  },
+  {
+    value: "bulwer's petrel",
+    label: "Bulwer's Petrel",
+  },
+  {
+    value: "jouanin's petrel",
+    label: "Jouanin's Petrel",
+  },
+  {
+    value: "white-chinned petrel",
+    label: "White-chinned Petrel",
+  },
+  {
+    value: "parkinson's petrel",
+    label: "Parkinson's Petrel",
+  },
+  {
+    value: "streaked shearwater",
+    label: "Streaked Shearwater",
+  },
+  {
+    value: "wedge-tailed shearwater",
+    label: "Wedge-tailed Shearwater",
+  },
+  {
+    value: "buller's shearwater",
+    label: "Buller's Shearwater",
+  },
+  {
+    value: "pink-footed shearwater",
+    label: "Pink-footed Shearwater",
+  },
+  {
+    value: "flesh-footed shearwater",
+    label: "Flesh-footed Shearwater",
+  },
+  {
+    value: "newell's shearwater",
+    label: "Newell's Shearwater",
+  },
+  {
+    value: "black-vented shearwater",
+    label: "Black-vented Shearwater",
+  },
+  {
+    value: "little shearwater",
+    label: "Little Shearwater",
+  },
+  {
+    value: "black stork",
+    label: "Black Stork",
+  },
+  {
+    value: "lesser frigatebird",
+    label: "Lesser Frigatebird",
+  },
+  {
+    value: "great frigatebird",
+    label: "Great Frigatebird",
+  },
+  {
+    value: "masked booby",
+    label: "Masked Booby",
+  },
+  {
+    value: "nazca booby",
+    label: "Nazca Booby",
+  },
+  {
+    value: "blue-footed booby",
+    label: "Blue-footed Booby",
+  },
+  {
+    value: "red-footed booby",
+    label: "Red-footed Booby",
+  },
+  {
+    value: "brandt's cormorant",
+    label: "Brandt's Cormorant",
+  },
+  {
+    value: "red-faced cormorant",
+    label: "Red-faced Cormorant",
+  },
+  {
+    value: "pelagic cormorant",
+    label: "Pelagic Cormorant",
+  },
+  {
+    value: "chinese pond-heron",
+    label: "Chinese Pond-heron",
+  },
+  {
+    value: "agami heron",
+    label: "Agami Heron",
+  },
+  {
+    value: "california condor",
+    label: "California Condor",
+  },
+  {
+    value: "andean condor",
+    label: "Andean Condor",
+  },
+  {
+    value: "northern harrier",
+    label: "Northern Harrier",
+  },
+  {
+    value: "eurasian goshawk",
+    label: "Eurasian Goshawk",
+  },
+  {
+    value: "american goshawk",
+    label: "American Goshawk",
+  },
+  {
+    value: "black kite",
+    label: "Black Kite",
+  },
+  {
+    value: "common black hawk",
+    label: "Common Black Hawk",
+  },
+  {
+    value: "harris's hawk",
+    label: "Harris's Hawk",
+  },
+  {
+    value: "white-tailed hawk",
+    label: "White-tailed Hawk",
+  },
+  {
+    value: "gray hawk",
+    label: "Gray Hawk",
+  },
+  {
+    value: "rough-legged hawk",
+    label: "Rough-legged Hawk",
+  },
+  {
+    value: "flammulated owl",
+    label: "Flammulated Owl",
+  },
+  {
+    value: "whiskered screech-owl",
+    label: "Whiskered Screech-owl",
+  },
+  {
+    value: "western screech-owl",
+    label: "Western Screech-owl",
+  },
+  {
+    value: "boreal owl",
+    label: "Boreal Owl",
+  },
+  {
+    value: "eurasian wryneck",
+    label: "Eurasian Wryneck",
+  },
+  {
+    value: "acorn woodpecker",
+    label: "Acorn Woodpecker",
+  },
+  {
+    value: "gila woodpecker",
+    label: "Gila Woodpecker",
+  },
+  {
+    value: "red-naped sapsucker",
+    label: "Red-naped Sapsucker",
+  },
+  {
+    value: "red-breasted sapsucker",
+    label: "Red-breasted Sapsucker",
+  },
+  {
+    value: "nuttall's woodpecker",
+    label: "Nuttall's Woodpecker",
+  },
+  {
+    value: "ladder-backed woodpecker",
+    label: "Ladder-backed Woodpecker",
+  },
+  {
+    value: "white-headed woodpecker",
+    label: "White-headed Woodpecker",
+  },
+  {
+    value: "gilded flicker",
+    label: "Gilded Flicker",
+  },
+  {
+    value: "yellow-headed caracara",
+    label: "Yellow-headed Caracara",
+  },
+  {
+    value: "eurasian kestrel",
+    label: "Eurasian Kestrel",
+  },
+  {
+    value: "prairie falcon",
+    label: "Prairie Falcon",
+  },
+  {
+    value: "yellow-chevroned parakeet",
+    label: "Yellow-chevroned Parakeet",
+  },
+  {
+    value: "red-crowned parrot",
+    label: "Red-crowned Parrot",
+  },
+  {
+    value: "lilac-crowned parrot",
+    label: "Lilac-crowned Parrot",
+  },
+  {
+    value: "nanday parakeet",
+    label: "Nanday Parakeet",
+  },
+  {
+    value: "mitred parakeet",
+    label: "Mitred Parakeet",
+  },
+  {
+    value: "red-masked parakeet",
+    label: "Red-masked Parakeet",
+  },
+  {
+    value: "rose-throated becard",
+    label: "Rose-throated Becard",
+  },
+  {
+    value: "small-billed elaenia",
+    label: "Small-billed Elaenia",
+  },
+  {
+    value: "dusky-capped flycatcher",
+    label: "Dusky-capped Flycatcher",
+  },
+  {
+    value: "nutting's flycatcher",
+    label: "Nutting's Flycatcher",
+  },
+  {
+    value: "brown-crested flycatcher",
+    label: "Brown-crested Flycatcher",
+  },
+  {
+    value: "thick-billed kingbird",
+    label: "Thick-billed Kingbird",
+  },
+  {
+    value: "greater pewee",
+    label: "Greater Pewee",
+  },
+  {
+    value: "western wood pewee",
+    label: "Western Wood Pewee",
+  },
+  {
+    value: "gray flycatcher",
+    label: "Gray Flycatcher",
+  },
+  {
+    value: "dusky flycatcher",
+    label: "Dusky Flycatcher",
+  },
+  {
+    value: "western flycatcher",
+    label: "Western Flycatcher",
+  },
+  {
+    value: "buff-breasted flycatcher",
+    label: "Buff-breasted Flycatcher",
+  },
+  {
+    value: "black phoebe",
+    label: "Black Phoebe",
+  },
+  {
+    value: "gray vireo",
+    label: "Gray Vireo",
+  },
+  {
+    value: "hutton's vireo",
+    label: "Hutton's Vireo",
+  },
+  {
+    value: "plumbeous vireo",
+    label: "Plumbeous Vireo",
+  },
+  {
+    value: "yellow-green vireo",
+    label: "Yellow-green Vireo",
+  },
+  {
+    value: "brown shrike",
+    label: "Brown Shrike",
+  },
+  {
+    value: "canada jay",
+    label: "Canada Jay",
+  },
+  {
+    value: "pinyon jay",
+    label: "Pinyon Jay",
+  },
+  {
+    value: "steller's jay",
+    label: "Steller's Jay",
+  },
+  {
+    value: "island scrub-jay",
+    label: "Island Scrub-jay",
+  },
+  {
+    value: "california scrub-jay",
+    label: "California Scrub-jay",
+  },
+  {
+    value: "woodhouse's scrub-jay",
+    label: "Woodhouse's Scrub-jay",
+  },
+  {
+    value: "clark's nutcracker",
+    label: "Clark's Nutcracker",
+  },
+  {
+    value: "yellow-billed magpie",
+    label: "Yellow-billed Magpie",
+  },
+  {
+    value: "verdin",
+    label: "Verdin",
+  },
+  {
+    value: "mountain chickadee",
+    label: "Mountain Chickadee",
+  },
+  {
+    value: "chestnut-backed chickadee",
+    label: "Chestnut-backed Chickadee",
+  },
+  {
+    value: "oak titmouse",
+    label: "Oak Titmouse",
+  },
+  {
+    value: "juniper titmouse",
+    label: "Juniper Titmouse",
+  },
+  {
+    value: "lanceolated warbler",
+    label: "Lanceolated Warbler",
+  },
+  {
+    value: "bank swallow",
+    label: "Bank Swallow",
+  },
+  {
+    value: "bushtit",
+    label: "Bushtit",
+  },
+  {
+    value: "wood warbler",
+    label: "Wood Warbler",
+  },
+  {
+    value: "yellow-browed warbler",
+    label: "Yellow-browed Warbler",
+  },
+  {
+    value: "dusky warbler",
+    label: "Dusky Warbler",
+  },
+  {
+    value: "willow warbler",
+    label: "Willow Warbler",
+  },
+  {
+    value: "arctic warbler",
+    label: "Arctic Warbler",
+  },
+  {
+    value: "red-whiskered bulbul",
+    label: "Red-whiskered Bulbul",
+  },
+  {
+    value: "wrentit",
+    label: "Wrentit",
+  },
+  {
+    value: "gray silky-flycatcher",
+    label: "Gray Silky-flycatcher",
+  },
+  {
+    value: "phainopepla",
+    label: "Phainopepla",
+  },
+  {
+    value: "pygmy nuthatch",
+    label: "Pygmy Nuthatch",
+  },
+  {
+    value: "brown creeper",
+    label: "Brown Creeper",
+  },
+  {
+    value: "black-tailed gnatcatcher",
+    label: "Black-tailed Gnatcatcher",
+  },
+  {
+    value: "california gnatcatcher",
+    label: "California Gnatcatcher",
+  },
+  {
+    value: "rock wren",
+    label: "Rock Wren",
+  },
+  {
+    value: "canyon wren",
+    label: "Canyon Wren",
+  },
+  {
+    value: "pacific wren",
+    label: "Pacific Wren",
+  },
+  {
+    value: "cactus wren",
+    label: "Cactus Wren",
+  },
+  {
+    value: "blue mockingbird",
+    label: "Blue Mockingbird",
+  },
+  {
+    value: "curve-billed thrasher",
+    label: "Curve-billed Thrasher",
+  },
+  {
+    value: "bendire's thrasher",
+    label: "Bendire's Thrasher",
+  },
+  {
+    value: "california thrasher",
+    label: "California Thrasher",
+  },
+  {
+    value: "leconte's thrasher",
+    label: "LeConte's Thrasher",
+  },
+  {
+    value: "crissal thrasher",
+    label: "Crissal Thrasher",
+  },
+  {
+    value: "european starling",
+    label: "European Starling",
+  },
+  {
+    value: "american dipper",
+    label: "American Dipper",
+  },
+  {
+    value: "western bluebird",
+    label: "Western Bluebird",
+  },
+  {
+    value: "eyebrowed thrush",
+    label: "Eyebrowed Thrush",
+  },
+  {
+    value: "rufous-backed robin",
+    label: "Rufous-backed Robin",
+  },
+  {
+    value: "scaly-breasted munia",
+    label: "Scaly-breasted Munia",
+  },
+  {
+    value: "eurasian tree sparrow",
+    label: "Eurasian Tree Sparrow",
+  },
+  {
+    value: "eastern yellow wagtail",
+    label: "Eastern Yellow Wagtail",
+  },
+  {
+    value: "citrine wagtail",
+    label: "Citrine Wagtail",
+  },
+  {
+    value: "gray wagtail",
+    label: "Gray Wagtail",
+  },
+  {
+    value: "white wagtail",
+    label: "White Wagtail",
+  },
+  {
+    value: "olive-backed pipt",
+    label: "Olive-backed Pipit",
+  },
+  {
+    value: "red-throated pipit",
+    label: "Red-throated Pipit",
+  },
+  {
+    value: "sprague's pipit",
+    label: "Sprague's Pipit",
+  },
+  {
+    value: "common rosefinch",
+    label: "Common Rosefinch",
+  },
+  {
+    value: "black rosy finch",
+    label: "Black Rosy Finch",
+  },
+  {
+    value: "cassin's finch",
+    label: "Cassin's Finch",
+  },
+  {
+    value: "oriental greenfinch",
+    label: "Oriental Greenfinch",
+  },
+  {
+    value: "lesser goldfinch",
+    label: "Lesser Goldfinch",
+  },
+  {
+    value: "lawrence's goldfinch",
+    label: "Lawrence's Goldfinch",
+  },
+  {
+    value: "thick-billed longspur",
+    label: "Thick-billed Longspur",
+  },
+  {
+    value: "black-throated sparrow",
+    label: "Black-throated Sparrow",
+  },
+  {
+    value: "black-chinned sparrow",
+    label: "Black-chinned Sparrow",
+  },
+  {
+    value: "brewer's sparrow",
+    label: "Brewer's Sparrow",
+  },
+  {
+    value: "sagebrush sparrow",
+    label: "Sagebrush Sparrow",
+  },
+  {
+    value: "bell's sparrow",
+    label: "Bell's Sparrow",
+  },
+  {
+    value: "leconte's sparrow",
+    label: "LeConte's Sparrow",
+  },
+  {
+    value: "albert's towhee",
+    label: "Albert's Towhee",
+  },
+  {
+    value: "california towhee",
+    label: "California Towhee",
+  },
+  {
+    value: "rufous-crowned sparrow",
+    label: "Rufous-crowned sparrow",
+  },
+  {
+    value: "hooded oriole",
+    label: "Hooded Oriole",
+  },
+  {
+    value: "streak-backed oriole",
+    label: "Streak-backed Oriole",
+  },
+  {
+    value: "great-tailed grackle",
+    label: "Great-tailed Grackle",
+  },
+  {
+    value: "lucy's warbler",
+    label: "Lucy's Warbler",
+  },
+  {
+    value: "tropical parula",
+    label: "Tropical Parula",
+  },
+  {
+    value: "golden-cheeked warbler",
+    label: "Golden-cheeked Warbler",
+  },
+  {
+    value: "red-faced warbler",
+    label: "Red-faced Warbler",
+  },
+  {
+    value: "hepatic tanager",
+    label: "Hepatic Tanager",
+  },
+  {
+    value: "pyrrhuloxia",
+    label: "Pyrrhuloxia",
+  },
+  {
+    value: "varied bunting",
+    label: "Varied Bunting",
+  },
 ];
 
 let options = data.map((obj) => {
