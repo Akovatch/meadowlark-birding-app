@@ -1,15 +1,16 @@
 # Meadowlark Birding App
 
+  ## Visit
+
+  Meadowlark is live at www.meadowlark-birding.com.
+
+
 
   ## About
 
   Meadowlark is a web application that enables birdwatchers to log, organize, and publicly share their bird sightings, contributing to an ever-growing database of geographically organized bird sighting data. The mission of the site is to enable users to pinpoint the location of specific species in their area by querying the data submitted by other users. To this end, the site features a series of maps, filters, search fields, and sort options, allowing users to quickly sift through the data and view the sightings as map markers relative to their current location. Additionally, users can manage and organize their personal sighting data in a "My Stats" page, keeping track of their performance and sighting trends.
 
 ![community-full](./Screenshots/community-full.png)
-
-  ## Visit
-
-  Meadowlark is live at www.meadowlark-birding.com.
 
 
   ## Tech Stack
